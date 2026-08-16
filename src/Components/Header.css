@@ -1,5 +1,5 @@
 /* =========================================================
-   SHOPSTACK HEADER
+   SHOPSTACK HEADER — DESKTOP VIEW (DEFAULT / UNCHANGED)
 ========================================================= */
 
 .header {
@@ -12,7 +12,6 @@
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
 }
-
 
 /* =========================================================
    HEADER CONTAINER
@@ -30,15 +29,17 @@
     gap: 30px;
 }
 
-
 /* =========================================================
    LOGO — LEFT
 ========================================================= */
+
 .header-logo {
     display: flex;
-    align-items: right;
-    text-decoration: none;
+    align-items: center;
+    gap: 10px;
     flex-shrink: 0;
+    text-decoration: none;
+    color: #29251f;
 }
 
 .header-logo-img {
@@ -48,127 +49,82 @@
     display: block;
 }
 
-.header-logo {
+.header-logo-fallback {
     display: flex;
     align-items: center;
-
     gap: 10px;
-
-    flex-shrink: 0;
-
-    text-decoration: none;
-
-    color: #29251f;
 }
-
 
 .logo-icon {
     width: 38px;
     height: 38px;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     border-radius: 10px;
-
     background: #29251f;
-
     color: #ffffff;
-
     font-size: 16px;
-
     transition: 0.3s ease;
 }
 
-
 .header-logo:hover .logo-icon {
     background: #a9552f;
-
     transform: rotate(-5deg);
 }
 
-
 .logo-text {
     font-size: 22px;
-
     font-weight: 750;
-
     color: #29251f;
-
     letter-spacing: -0.7px;
 }
 
-
 /* =========================================================
-   NAVIGATION — CENTER
+   NAVIGATION — CENTER (DESKTOP)
 ========================================================= */
 
 .header-nav {
     position: absolute;
-
     left: 50%;
-
     transform: translateX(-50%);
-
     display: flex;
     align-items: center;
-
     justify-content: center;
-
     gap: 8px;
-
     white-space: nowrap;
 }
 
-
 .nav-link {
     position: relative;
-
     padding: 8px 13px;
-
     color: #6f675f;
-
     text-decoration: none;
-
     font-size: 14px;
-
     font-weight: 550;
-
     transition: color 0.25s ease;
 }
-
 
 .nav-link:hover {
     color: #a9552f;
 }
 
-
 .nav-link.active {
     color: #a9552f;
-
     font-weight: 650;
 }
 
-
 .nav-link.active::after {
     content: "";
-
     position: absolute;
-
     left: 50%;
     bottom: -7px;
-
     width: 5px;
     height: 5px;
-
     border-radius: 50%;
-
     background: #a9552f;
-
     transform: translateX(-50%);
 }
-
 
 /* =========================================================
    RIGHT SIDE ACTIONS
@@ -176,113 +132,36 @@
 
 .header-actions {
     margin-left: auto;
-
     display: flex;
-
     align-items: center;
-
     justify-content: flex-end;
-
     gap: 8px;
-
     flex-shrink: 0;
 }
-
-
-/* =========================================================
-   SEARCH
-========================================================= */
-
-.search-box {
-    position: relative;
-    width: 220px;
-    margin-right: 8px;
-}
-
-
-.search-icon {
-    position: absolute;
-    left: 15px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #8b8178;
-    font-size: 14px;
-    pointer-events: none;
-}
-
-
-.search-input {
-    width: 100%;
-    height: 40px;
-    padding: 0 15px 0 40px;
-    border: 1px solid #e5dfd7;
-    border-radius: 22px;
-    outline: none;
-    background: #faf9f7;
-    color: #29251f;
-    font-size: 13px;
-    transition: 0.25s ease;
-}
-
-
-.search-input::placeholder {
-    color: #9b938b;
-}
-
-
-.search-input:hover {
-    background: #ffffff;
-    border-color: #d5cbc1;
-}
-
-
-.search-input:focus {
-    background: #ffffff;
-    border-color: #b76e45;
-    box-shadow:0 0 0 3px rgba(183, 110, 69, 0.08);
-}
-
-
-/* =========================================================
-   ACTION ICONS
-========================================================= */
 
 .action-icon-btn {
     position: relative;
-
     width: 40px;
     height: 40px;
-
     display: flex;
-
     align-items: center;
     justify-content: center;
-
     flex-shrink: 0;
-
     border-radius: 50%;
-
     color: #625b54;
-
     text-decoration: none;
-
     font-size: 16px;
-
     transition:
         color 0.25s ease,
         background 0.25s ease,
         transform 0.25s ease;
 }
 
-
 .action-icon-btn:hover {
     color: #a9552f;
-
     background: #f7eee8;
-
     transform: translateY(-2px);
 }
-
 
 /* =========================================================
    CART BADGE
@@ -290,64 +169,35 @@
 
 .cart-badge {
     position: absolute;
-
     top: 0;
     right: -1px;
-
     min-width: 16px;
     height: 16px;
-
     padding: 0 4px;
-
     display: flex;
-
     align-items: center;
     justify-content: center;
-
     border-radius: 20px;
-
     background: #a9552f;
-
     color: #ffffff;
-
     border: 2px solid #ffffff;
-
     font-size: 8px;
-
     font-weight: 700;
 }
 
-
 /* =========================================================
-   HAMBURGER
+   FLOATING BOTTOM DOCK — HIDDEN ON DESKTOP BY DEFAULT
 ========================================================= */
 
-.mobile-hamburger {
+.bottom-nav-dock {
     display: none;
-
-    width: 40px;
-    height: 40px;
-
-    border: none;
-
-    border-radius: 50%;
-
-    background: transparent;
-
-    color: #625b54;
-
-    font-size: 18px;
-
-    cursor: pointer;
 }
 
-
 /* =========================================================
-   TABLET
+   TABLET VIEW
 ========================================================= */
 
 @media (max-width: 1150px) {
-
     .header-container {
         padding: 0 25px;
     }
@@ -359,88 +209,175 @@
     .nav-link {
         padding: 8px 8px;
     }
-
-    .search-box {
-        width: 180px;
-    }
-
 }
 
-
 /* =========================================================
-   MOBILE
+   MOBILE VIEW (max-width: 900px)
+   - Top Header: Logo on Left, Action icons on Right
+   - Center Navigation in Top Header: Hidden
+   - Bottom Floating Navigation Dock: Visible (max-width: 500px)
 ========================================================= */
 
 @media (max-width: 900px) {
+    .header {
+        background: rgba(255, 255, 255, 0.88);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+    }
 
+    .header-container {
+        height: 68px;
+        padding: 0 20px;
+    }
+
+    .header-logo-img {
+        width: 160px;
+        height: 70px;
+    }
+
+    /* Hide desktop center nav links */
     .header-nav {
         display: none;
     }
 
-    .mobile-hamburger {
-        display: flex;
+    .header-actions {
+        gap: 6px;
+    }
 
+    /* Show Floating Bottom Navigation Dock on Mobile */
+    .bottom-nav-dock {
+        display: block;
+        position: fixed;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: calc(100% - 28px);
+        max-width: 500px;
+        z-index: 1000;
+        pointer-events: auto;
+    }
+
+    .bottom-nav-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        background: rgba(255, 255, 255, 0.94);
+        border: 1px solid rgba(229, 223, 215, 0.85);
+        border-radius: 40px;
+        padding: 8px 10px;
+        box-shadow: 
+            0 12px 32px rgba(41, 37, 31, 0.12),
+            0 3px 10px rgba(0, 0, 0, 0.04),
+            inset 0 1px 0 rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+    }
+
+    .bottom-nav-link {
+        display: flex;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
+        text-decoration: none;
+        color: #6f675f;
+        padding: 6px 10px;
+        border-radius: 20px;
+        gap: 3px;
+        flex: 1;
+        max-width: 88px;
+        transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
     }
 
+    .bottom-nav-icon-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+        line-height: 1;
+        transition: transform 0.2s ease, color 0.2s ease;
+    }
+
+    .bottom-nav-label {
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.1px;
+        white-space: nowrap;
+        transition: color 0.2s ease, font-weight 0.2s ease;
+    }
+
+    .bottom-nav-link:hover {
+        color: #a9552f;
+        transform: translateY(-2px);
+    }
+
+    .bottom-nav-link:hover .bottom-nav-icon-wrapper {
+        transform: scale(1.15);
+    }
+
+    .bottom-nav-link.active {
+        color: #a9552f;
+        background: rgba(169, 85, 47, 0.12);
+    }
+
+    .bottom-nav-link.active .bottom-nav-label {
+        font-weight: 700;
+    }
+
+    .bottom-nav-link.active .bottom-nav-icon-wrapper {
+        transform: scale(1.1);
+        color: #a9552f;
+    }
 }
 
-
 /* =========================================================
-   SMALL MOBILE
+   SMALL MOBILE VIEW (max-width: 480px)
 ========================================================= */
 
-@media (max-width: 600px) {
-
+@media (max-width: 480px) {
     .header-container {
-        height: 68px;
-
-        padding: 0 18px;
+        height: 64px;
+        padding: 0 14px;
     }
 
-    .search-box {
-        display: none;
+    .header-logo-img {
+        width: 140px;
+        height: 60px;
     }
 
     .logo-text {
-        font-size: 20px;
+        font-size: 19px;
     }
 
     .logo-icon {
-        width: 35px;
-        height: 35px;
-    }
-
-    .header-actions {
-        gap: 3px;
-    }
-
-    .action-icon-btn {
-        width: 37px;
-        height: 37px;
-    }
-
-}
-
-
-/* =========================================================
-   VERY SMALL MOBILE
-========================================================= */
-
-@media (max-width: 400px) {
-
-    .header-container {
-        padding: 0 12px;
-    }
-
-    .logo-text {
-        font-size: 18px;
-    }
-
-    .action-icon-btn {
         width: 34px;
         height: 34px;
     }
 
+    .action-icon-btn {
+        width: 38px;
+        height: 38px;
+        font-size: 15px;
+    }
+
+    .bottom-nav-dock {
+        bottom: 12px;
+        width: calc(100% - 16px);
+    }
+
+    .bottom-nav-container {
+        padding: 5px 4px;
+        border-radius: 30px;
+    }
+
+    .bottom-nav-link {
+        padding: 4px 3px;
+    }
+
+    .bottom-nav-icon-wrapper {
+        font-size: 16px;
+    }
+
+    .bottom-nav-label {
+        font-size: 9.5px;
+    }
 }
