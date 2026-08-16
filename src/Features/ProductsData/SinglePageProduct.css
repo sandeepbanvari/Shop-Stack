@@ -1,0 +1,1105 @@
+/* =========================================================
+   SINGLE PRODUCT PAGE
+   SHOPSTACK — LIGHT PREMIUM DESIGN
+========================================================= */
+
+.spd-wrapper {
+    width: 100%;
+
+    min-height: 100vh;
+
+    padding: 35px 6% 90px;
+
+    background: #faf9f7;
+
+    color: #29251f;
+}
+
+
+/* =========================================================
+   BACK BUTTON
+========================================================= */
+
+.spd-back-btn {
+    display: inline-flex;
+
+    align-items: center;
+
+    margin-bottom: 35px;
+
+    padding: 10px 0;
+
+    border: none;
+
+    background: transparent;
+
+    color: #756d65;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+.spd-back-btn:hover {
+    color: #a9552f;
+
+    transform: translateX(-4px);
+}
+
+
+/* =========================================================
+   MAIN PRODUCT CONTAINER
+========================================================= */
+
+.spd-container {
+    width: 100%;
+
+    max-width: 1250px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+
+    gap: 75px;
+
+    align-items: start;
+}
+
+
+/* =========================================================
+   IMAGE COLUMN
+========================================================= */
+
+.spd-image-col {
+    width: 100%;
+}
+
+
+.spd-main-image {
+    position: relative;
+
+    width: 100%;
+
+    min-height: 560px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 45px;
+
+    background: #ffffff;
+
+    border: 1px solid #ebe5de;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+}
+
+
+.spd-main-image img {
+    width: 100%;
+
+    max-width: 500px;
+
+    height: 500px;
+
+    object-fit: contain;
+
+    display: block;
+
+    transition:
+        transform 0.45s ease;
+}
+
+
+.spd-main-image:hover img {
+    transform: scale(1.04);
+}
+
+
+/* =========================================================
+   DISCOUNT BADGE
+========================================================= */
+
+.spd-discount-badge {
+    position: absolute;
+
+    top: 22px;
+    left: 22px;
+
+    padding: 8px 13px;
+
+    border-radius: 20px;
+
+    background: #a9552f;
+
+    color: #ffffff;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.5px;
+}
+
+
+/* =========================================================
+   DETAILS COLUMN
+========================================================= */
+
+.spd-details-col {
+    width: 100%;
+
+    padding-top: 8px;
+}
+
+
+/* =========================================================
+   CATEGORY
+========================================================= */
+
+.spd-category-tag {
+    display: inline-flex;
+
+    align-items: center;
+
+    padding: 7px 13px;
+
+    border-radius: 20px;
+
+    background: #f2e7de;
+
+    color: #a9552f;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.8px;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   BRAND
+========================================================= */
+
+.spd-brand {
+    margin: 20px 0 7px;
+
+    color: #a08f82;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.spd-title {
+    margin: 0;
+
+    max-width: 650px;
+
+    color: #29251f;
+
+    font-size: 42px;
+
+    line-height: 1.12;
+
+    font-weight: 700;
+
+    letter-spacing: -1.5px;
+}
+
+
+/* =========================================================
+   RATING
+========================================================= */
+
+.spd-rating-row {
+    display: flex;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 9px;
+
+    margin-top: 17px;
+}
+
+
+.stars {
+    color: #c47a45;
+
+    font-size: 17px;
+
+    letter-spacing: 1px;
+}
+
+
+.spd-rating-num {
+    color: #29251f;
+
+    font-size: 14px;
+
+    font-weight: 700;
+}
+
+
+.spd-reviews-count {
+    color: #8a8179;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.spd-description {
+    max-width: 600px;
+
+    margin: 25px 0;
+
+    color: #756d65;
+
+    font-size: 15px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   DIVIDER
+========================================================= */
+
+.spd-divider {
+    width: 100%;
+
+    height: 1px;
+
+    margin: 25px 0;
+
+    border: none;
+
+    background: #e7e0d9;
+}
+
+
+/* =========================================================
+   PRICE
+========================================================= */
+
+.spd-price-row {
+    display: flex;
+
+    align-items: baseline;
+
+    gap: 14px;
+
+    margin-bottom: 12px;
+}
+
+
+.spd-price {
+    color: #29251f;
+
+    font-size: 34px;
+
+    font-weight: 750;
+
+    letter-spacing: -1px;
+}
+
+
+.spd-original-price {
+    color: #aaa099;
+
+    font-size: 17px;
+
+    text-decoration: line-through;
+}
+
+
+/* =========================================================
+   STOCK
+========================================================= */
+
+.spd-stock {
+    display: inline-flex;
+
+    align-items: center;
+
+    margin-bottom: 25px;
+
+    padding: 7px 12px;
+
+    border-radius: 7px;
+
+    background: #e9f5ed;
+
+    color: #32734b;
+
+    font-size: 12px;
+
+    font-weight: 650;
+}
+
+
+.spd-stock.low {
+    background: #fff1e7;
+
+    color: #b65c27;
+}
+
+
+/* =========================================================
+   QUANTITY
+========================================================= */
+
+.spd-qty-row {
+    display: flex;
+
+    align-items: center;
+
+    gap: 16px;
+
+    margin-bottom: 25px;
+}
+
+
+.spd-qty-label {
+    color: #514a43;
+
+    font-size: 14px;
+
+    font-weight: 650;
+}
+
+
+.spd-qty-control {
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+
+    overflow: hidden;
+
+    border: 1px solid #ddd4cb;
+
+    border-radius: 9px;
+
+    background: #ffffff;
+}
+
+
+.spd-qty-control button {
+    width: 42px;
+
+    height: 100%;
+
+    border: none;
+
+    background: transparent;
+
+    color: #514a43;
+
+    font-size: 18px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+
+.spd-qty-control button:hover {
+    background: #f5eee8;
+
+    color: #a9552f;
+}
+
+
+.spd-qty-control span {
+    min-width: 40px;
+
+    text-align: center;
+
+    color: #29251f;
+
+    font-size: 14px;
+
+    font-weight: 650;
+}
+
+
+/* =========================================================
+   ACTION BUTTONS
+========================================================= */
+
+.spd-actions {
+    width: 100%;
+
+    display: flex;
+
+    gap: 12px;
+
+    margin-bottom: 12px;
+}
+
+
+.spd-btn-cart,
+.spd-btn-buy {
+    height: 52px;
+
+    padding: 0 25px;
+
+    border-radius: 10px;
+
+    font-size: 14px;
+
+    font-weight: 650;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+
+.spd-btn-cart {
+    flex: 1;
+
+    border: 1px solid #29251f;
+
+    background: #29251f;
+
+    color: #ffffff;
+}
+
+
+.spd-btn-cart:hover {
+    background: #a9552f;
+
+    border-color: #a9552f;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(169, 85, 47, 0.18);
+}
+
+
+.spd-btn-buy {
+    flex: 1;
+
+    border: 1px solid #d8cec4;
+
+    background: #ffffff;
+
+    color: #29251f;
+}
+
+
+.spd-btn-buy:hover {
+    border-color: #a9552f;
+
+    color: #a9552f;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   CART MESSAGE
+========================================================= */
+
+.spd-cart-msg {
+    margin: 10px 0;
+
+    color: #32734b;
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   META INFORMATION
+========================================================= */
+
+.spd-meta {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+
+    margin-top: 25px;
+
+    padding-top: 22px;
+
+    border-top: 1px solid #e7e0d9;
+}
+
+
+.spd-meta span {
+    color: #81786f;
+
+    font-size: 13px;
+}
+
+
+.spd-meta strong {
+    color: #514a43;
+
+    font-weight: 650;
+}
+
+
+/* =========================================================
+   REVIEWS SECTION
+========================================================= */
+
+.spd-reviews-section {
+    width: 100%;
+
+    max-width: 1250px;
+
+    margin: 85px auto 0;
+
+    padding-top: 45px;
+
+    border-top: 1px solid #e5ded6;
+}
+
+
+.spd-reviews-title {
+    margin: 0 0 30px;
+
+    color: #29251f;
+
+    font-size: 26px;
+
+    font-weight: 700;
+
+    letter-spacing: -0.6px;
+}
+
+
+.spd-reviews-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 18px;
+}
+
+
+/* =========================================================
+   REVIEW CARD
+========================================================= */
+
+.spd-review-card {
+    padding: 24px;
+
+    background: #ffffff;
+
+    border: 1px solid #ebe5de;
+
+    border-radius: 15px;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+
+.spd-review-card:hover {
+    transform: translateY(-4px);
+
+    border-color: #ddd2c8;
+
+    box-shadow:
+        0 12px 30px rgba(45, 42, 38, 0.07);
+}
+
+
+/* =========================================================
+   REVIEW HEADER
+========================================================= */
+
+.spd-review-header {
+    display: flex;
+
+    align-items: center;
+
+    gap: 11px;
+}
+
+
+.spd-reviewer-avatar {
+    width: 40px;
+    height: 40px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #f1e5dc;
+
+    color: #a9552f;
+
+    font-size: 14px;
+
+    font-weight: 700;
+}
+
+
+.spd-reviewer-name {
+    margin: 0;
+
+    color: #29251f;
+
+    font-size: 13px;
+
+    font-weight: 650;
+}
+
+
+.spd-review-date {
+    margin: 3px 0 0;
+
+    color: #a09890;
+
+    font-size: 11px;
+}
+
+
+.spd-review-rating {
+    margin-left: auto;
+
+    color: #c47a45;
+
+    font-size: 12px;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   REVIEW BODY
+========================================================= */
+
+.spd-review-body {
+    margin: 20px 0 0;
+
+    color: #756d65;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   LOADING / SHIMMER
+========================================================= */
+
+.spd-loading {
+    min-height: 750px;
+
+    padding: 70px 6%;
+
+    background: #faf9f7;
+}
+
+
+.spd-loading-container {
+    width: 100%;
+
+    max-width: 1250px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 75px;
+}
+
+
+.spd-shimmer {
+    position: relative;
+
+    overflow: hidden;
+
+    background: #eee9e3;
+
+    border-radius: 10px;
+}
+
+
+.spd-shimmer::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    transform: translateX(-100%);
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 255, 255, 0.65),
+            transparent
+        );
+
+    animation: spdShimmer 1.5s infinite;
+}
+
+
+@keyframes spdShimmer {
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+
+.spd-shimmer-img {
+    width: 100%;
+
+    height: 560px;
+
+    border-radius: 20px;
+}
+
+
+.spd-loading-details {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 18px;
+
+    padding-top: 20px;
+}
+
+
+.spd-shimmer-line {
+    height: 18px;
+}
+
+
+.spd-shimmer-line.w60 {
+    width: 60%;
+
+    height: 45px;
+}
+
+
+.spd-shimmer-line.w40 {
+    width: 40%;
+}
+
+
+.spd-shimmer-line.w80 {
+    width: 80%;
+}
+
+
+.spd-shimmer-line.w30 {
+    width: 30%;
+
+    height: 35px;
+}
+
+
+.spd-shimmer-btn {
+    width: 100%;
+
+    height: 52px;
+
+    margin-top: 15px;
+}
+
+
+/* =========================================================
+   LARGE TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .spd-container {
+        gap: 45px;
+    }
+
+
+    .spd-title {
+        font-size: 36px;
+    }
+
+
+    .spd-main-image {
+        min-height: 480px;
+
+        padding: 30px;
+    }
+
+
+    .spd-main-image img {
+        height: 420px;
+    }
+
+
+    .spd-reviews-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 800px) {
+
+    .spd-wrapper {
+        padding: 25px 5% 70px;
+    }
+
+
+    .spd-container {
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+    }
+
+
+    .spd-image-col {
+        max-width: 650px;
+
+        margin: 0 auto;
+
+        width: 100%;
+    }
+
+
+    .spd-details-col {
+        max-width: 650px;
+
+        margin: 0 auto;
+    }
+
+
+    .spd-main-image {
+        min-height: 500px;
+    }
+
+
+    .spd-main-image img {
+        height: 450px;
+    }
+
+
+    .spd-loading-container {
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .spd-wrapper {
+        padding: 20px 20px 60px;
+    }
+
+
+    .spd-back-btn {
+        margin-bottom: 22px;
+
+        font-size: 13px;
+    }
+
+
+    .spd-main-image {
+        min-height: 390px;
+
+        padding: 25px;
+
+        border-radius: 16px;
+    }
+
+
+    .spd-main-image img {
+        height: 340px;
+    }
+
+
+    .spd-discount-badge {
+        top: 15px;
+
+        left: 15px;
+    }
+
+
+    .spd-title {
+        font-size: 32px;
+
+        letter-spacing: -1px;
+    }
+
+
+    .spd-description {
+        font-size: 14px;
+
+        line-height: 1.7;
+    }
+
+
+    .spd-price {
+        font-size: 30px;
+    }
+
+
+    .spd-actions {
+        flex-direction: column;
+    }
+
+
+    .spd-btn-cart,
+    .spd-btn-buy {
+        width: 100%;
+    }
+
+
+    .spd-reviews-section {
+        margin-top: 60px;
+
+        padding-top: 35px;
+    }
+
+
+    .spd-reviews-title {
+        font-size: 22px;
+    }
+
+
+    .spd-reviews-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .spd-review-card {
+        padding: 20px;
+    }
+
+
+    .spd-loading {
+        padding: 40px 20px;
+
+        min-height: 650px;
+    }
+
+
+    .spd-shimmer-img {
+        height: 390px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+    .spd-wrapper {
+        padding-left: 15px;
+
+        padding-right: 15px;
+    }
+
+
+    .spd-main-image {
+        min-height: 340px;
+
+        padding: 20px;
+    }
+
+
+    .spd-main-image img {
+        height: 290px;
+    }
+
+
+    .spd-title {
+        font-size: 28px;
+    }
+
+
+    .spd-rating-row {
+        gap: 6px;
+    }
+
+
+    .stars {
+        font-size: 15px;
+    }
+
+
+    .spd-qty-row {
+        gap: 12px;
+    }
+
+}

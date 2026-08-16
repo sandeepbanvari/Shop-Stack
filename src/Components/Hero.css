@@ -1,0 +1,424 @@
+/* =========================================================
+   SHOPSTACK HERO
+   LIGHT PREMIUM STYLE
+========================================================= */
+
+.hero-section {
+    position: relative;
+
+    width: 100%;
+    min-height: 680px;
+
+    display: flex;
+    align-items: center;
+
+    overflow: hidden;
+
+    background-image: url("/public/shop.png");
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+/* =========================================================
+   OVERLAY
+========================================================= */
+
+.hero-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 1;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(250, 249, 247, 0.92) 0%,
+            rgba(250, 249, 247, 0.72) 40%,
+            rgba(250, 249, 247, 0.25) 70%,
+            rgba(250, 249, 247, 0) 100%
+        );
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.hero-container {
+    position: relative;
+
+    z-index: 2;
+
+    width: 100%;
+    max-width: 1400px;
+
+    margin: 0 auto;
+
+    padding: 0 7%;
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.hero-content {
+    max-width: 650px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 20px;
+}
+
+
+/* =========================================================
+   HIGHLIGHT / BADGE
+========================================================= */
+
+.hero-badge {
+    display: inline-flex;
+
+    align-items: center;
+
+    padding: 8px 16px;
+
+    background: #f4e7dc;
+
+    border: 1px solid #e4cfc0;
+
+    border-radius: 30px;
+
+    color: #a9552f;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.4px;
+
+    text-transform: uppercase;
+
+    font-family:
+        Inter,
+        Arial,
+        sans-serif;
+}
+
+
+/* =========================================================
+   MAIN TITLE
+========================================================= */
+
+.hero-title {
+    margin: 0;
+
+    color: #29251f;
+
+    font-family:
+        Inter,
+        Arial,
+        sans-serif;
+
+    font-size: clamp(48px, 6vw, 74px);
+
+    line-height: 1.04;
+
+    font-weight: 700;
+
+    letter-spacing: -2.8px;
+}
+
+
+/* =========================================================
+   HIGHLIGHT TEXT
+   Different font
+========================================================= */
+
+.hero-title .accent-text {
+    display: inline-block;
+
+    color: #a9552f;
+
+    font-family:
+        "Source Serif 4",
+        Georgia,
+        serif;
+
+    font-size: 1.05em;
+
+    font-weight: 600;
+
+    font-style: italic;
+
+    letter-spacing: -1.5px;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.hero-description {
+    max-width: 540px;
+
+    margin: 2px 0 0;
+
+    color: #6f675f;
+
+    font-family:
+        Inter,
+        Arial,
+        sans-serif;
+
+    font-size: 16px;
+
+    line-height: 1.7;
+
+    font-weight: 450;
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.hero-buttons {
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    margin-top: 8px;
+}
+
+
+.hero-btn {
+    min-width: 145px;
+
+    padding: 14px 25px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 10px;
+
+    text-decoration: none;
+
+    font-family:
+        Inter,
+        Arial,
+        sans-serif;
+
+    font-size: 14px;
+
+    font-weight: 650;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* =========================================================
+   PRIMARY BUTTON
+========================================================= */
+
+.primary-btn {
+    background: #29251f;
+
+    color: #ffffff;
+
+    box-shadow:
+        0 8px 20px rgba(41, 37, 31, 0.15);
+}
+
+
+.primary-btn:hover {
+    background: #a9552f;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 25px rgba(169, 85, 47, 0.22);
+}
+
+
+/* =========================================================
+   SECONDARY BUTTON
+========================================================= */
+
+.secondary-btn {
+    background: rgba(255, 255, 255, 0.75);
+
+    color: #29251f;
+
+    border: 1px solid #d8cec4;
+
+    backdrop-filter: blur(8px);
+}
+
+
+.secondary-btn:hover {
+    background: #ffffff;
+
+    color: #a9552f;
+
+    border-color: #b76e45;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 8px 20px rgba(45, 42, 38, 0.08);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .hero-section {
+        min-height: 620px;
+
+        background-position: 65% center;
+    }
+
+
+    .hero-container {
+        padding: 0 6%;
+    }
+
+
+    .hero-title {
+        font-size: 58px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .hero-section {
+        min-height: 650px;
+
+        background-position: 70% center;
+    }
+
+
+    .hero-overlay {
+        background:
+            linear-gradient(
+                90deg,
+                rgba(250, 249, 247, 0.96) 0%,
+                rgba(250, 249, 247, 0.84) 55%,
+                rgba(250, 249, 247, 0.45) 100%
+            );
+    }
+
+
+    .hero-container {
+        padding: 70px 6%;
+    }
+
+
+    .hero-content {
+        max-width: 100%;
+    }
+
+
+    .hero-title {
+        font-size: 46px;
+
+        letter-spacing: -1.8px;
+    }
+
+
+    .hero-title .accent-text {
+        font-size: 1.03em;
+
+        letter-spacing: -1px;
+    }
+
+
+    .hero-description {
+        font-size: 15px;
+
+        line-height: 1.6;
+    }
+
+
+    .hero-buttons {
+        width: 100%;
+
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+
+    .hero-btn {
+        width: 100%;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 450px) {
+
+    .hero-section {
+        min-height: 600px;
+    }
+
+
+    .hero-container {
+        padding: 60px 20px;
+    }
+
+
+    .hero-badge {
+        font-size: 10px;
+
+        padding: 7px 13px;
+    }
+
+
+    .hero-title {
+        font-size: 38px;
+
+        letter-spacing: -1.2px;
+    }
+
+
+    .hero-title .accent-text {
+        font-size: 1.02em;
+    }
+
+
+    .hero-description {
+        font-size: 14px;
+    }
+
+}
