@@ -1,0 +1,1011 @@
+/* =========================================================
+   SHOPSTACK DEALS HERO
+========================================================= */
+
+.deals-hero {
+    position: relative;
+
+    width: 100%;
+    min-height: 650px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 80px 8%;
+
+    overflow: hidden;
+
+    box-sizing: border-box;
+
+    background:
+        radial-gradient(
+            circle at 15% 30%,
+            rgba(169, 85, 47, 0.12),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 85% 70%,
+            rgba(208, 172, 145, 0.18),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #fffdf9,
+            #f5ebe1
+        );
+
+    color: #29251f;
+}
+
+
+/* =========================================================
+   DOT BACKGROUND
+========================================================= */
+
+.hero-dot-pattern {
+    position: absolute;
+
+    inset: 0;
+
+    background-image:
+        radial-gradient(
+            rgba(169, 85, 47, 0.18) 1px,
+            transparent 1px
+        );
+
+    background-size: 22px 22px;
+
+    opacity: 0.35;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   BACKGROUND CIRCLES
+========================================================= */
+
+.hero-circle {
+    position: absolute;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(169, 85, 47, 0.12);
+
+    pointer-events: none;
+
+    animation: heroCircleFloat 7s ease-in-out infinite;
+}
+
+.hero-circle-one {
+    width: 400px;
+    height: 400px;
+
+    left: -220px;
+    top: -180px;
+}
+
+.hero-circle-two {
+    width: 300px;
+    height: 300px;
+
+    right: -140px;
+    bottom: -120px;
+
+    animation-delay: 2s;
+}
+
+
+/* =========================================================
+   HERO CONTENT
+========================================================= */
+
+.deals-hero-content {
+    position: relative;
+
+    z-index: 5;
+
+    width: 58%;
+
+    animation: heroContentShow 0.8s ease both;
+}
+
+
+/* =========================================================
+   OFFER LABEL
+========================================================= */
+
+.deals-label {
+    width: fit-content;
+
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 8px 16px;
+
+    margin-bottom: 20px;
+
+    border-radius: 30px;
+
+    background: #29251f;
+
+    color: #ffffff;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.8px;
+}
+
+.deals-label svg {
+    color: #d28b64;
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.deals-hero h1 {
+    max-width: 700px;
+
+    margin: 0;
+
+    color: #29251f;
+
+    font-size: clamp(48px, 5vw, 72px);
+
+    line-height: 1.05;
+
+    letter-spacing: -3px;
+
+    font-weight: 800;
+}
+
+.deals-hero h1 span {
+    display: block;
+
+    margin-top: 8px;
+
+    color: #a9552f;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-style: italic;
+
+    font-weight: 500;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.deals-hero-content > p {
+    max-width: 580px;
+
+    margin: 24px 0;
+
+    color: #716a63;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   TIMER TITLE
+========================================================= */
+
+.deal-timer-title {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    margin-bottom: 12px;
+
+    color: #a9552f;
+
+    font-size: 12px;
+
+    font-weight: 700;
+}
+
+.deal-timer-title svg {
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   TIMER
+========================================================= */
+
+.deal-timer {
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+
+    margin-bottom: 30px;
+}
+
+
+/* Timer box */
+
+.timer-box {
+    width: 72px;
+    height: 72px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #dfd2c7;
+
+    border-radius: 14px;
+
+    background: rgba(255, 255, 255, 0.75);
+
+    box-shadow:
+        0 10px 25px rgba(60, 40, 25, 0.07);
+
+    backdrop-filter: blur(8px);
+
+    transition: 0.3s ease;
+}
+
+.timer-box:hover {
+    transform: translateY(-4px);
+
+    border-color: #c89b82;
+
+    box-shadow:
+        0 15px 30px rgba(60, 40, 25, 0.10);
+}
+
+
+/* Timer number */
+
+.timer-box strong {
+    color: #29251f;
+
+    font-size: 24px;
+
+    line-height: 1;
+}
+
+
+/* Timer label */
+
+.timer-box span {
+    margin-top: 6px;
+
+    color: #93877d;
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.5px;
+}
+
+
+/* Colon */
+
+.timer-colon {
+    color: #a9552f;
+
+    font-size: 22px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   SHOP DEALS BUTTON
+========================================================= */
+
+.shop-deals-btn {
+    width: fit-content;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 15px 26px;
+
+    border-radius: 30px;
+
+    background: #29251f;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    box-shadow:
+        0 10px 25px rgba(41, 37, 31, 0.12);
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.shop-deals-btn:hover {
+    background: #a9552f;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 15px 30px rgba(169, 85, 47, 0.20);
+}
+
+.shop-deals-btn svg {
+    transition: transform 0.3s ease;
+}
+
+.shop-deals-btn:hover svg {
+    transform: translateX(5px);
+}
+
+
+/* =========================================================
+   RIGHT SIDE VISUAL
+========================================================= */
+
+.hero-deal-visual {
+    position: relative;
+
+    z-index: 5;
+
+    width: 38%;
+    height: 430px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    animation: visualReveal 1s ease both;
+}
+
+
+/* =========================================================
+   DISCOUNT CIRCLE
+========================================================= */
+
+.discount-circle {
+    position: relative;
+
+    z-index: 3;
+
+    width: 280px;
+    height: 280px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            145deg,
+            #b9673e,
+            #8e4528
+        );
+
+    color: #ffffff;
+
+    box-shadow:
+        0 30px 60px rgba(100, 55, 30, 0.25);
+
+    animation: discountFloat 4s ease-in-out infinite;
+}
+
+
+/* Percent icon */
+
+.discount-percent-icon {
+    font-size: 30px;
+}
+
+
+/* 50% */
+
+.discount-circle strong {
+    margin-top: 6px;
+
+    font-size: 80px;
+
+    line-height: 0.9;
+
+    font-weight: 800;
+}
+
+
+/* OFF */
+
+.discount-circle span {
+    margin-top: 10px;
+
+    font-size: 14px;
+
+    font-weight: 800;
+
+    letter-spacing: 4px;
+}
+
+
+/* =========================================================
+   FLOATING BEST DEAL
+========================================================= */
+
+.floating-tag {
+    position: absolute;
+
+    z-index: 6;
+
+    top: 45px;
+    right: 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    padding: 12px 18px;
+
+    border-radius: 30px;
+
+    background: #29251f;
+
+    color: #ffffff;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    box-shadow:
+        0 12px 25px rgba(0, 0, 0, 0.12);
+
+    animation: floatingTag 3s ease-in-out infinite;
+}
+
+.floating-tag svg {
+    color: #d28b64;
+
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   FLOATING BAG
+========================================================= */
+
+.floating-bag {
+    position: absolute;
+
+    z-index: 6;
+
+    left: 25px;
+    bottom: 55px;
+
+    width: 65px;
+    height: 65px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 18px;
+
+    background: #ffffff;
+
+    color: #a9552f;
+
+    font-size: 25px;
+
+    box-shadow:
+        0 15px 30px rgba(70, 45, 30, 0.12);
+
+    animation: floatingBag 4s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   VISUAL RINGS
+========================================================= */
+
+.visual-ring {
+    position: absolute;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(169, 85, 47, 0.15);
+
+    pointer-events: none;
+}
+
+.visual-ring-one {
+    width: 360px;
+    height: 360px;
+
+    animation: ringRotate 15s linear infinite;
+}
+
+.visual-ring-two {
+    width: 420px;
+    height: 420px;
+
+    border-style: dashed;
+
+    opacity: 0.5;
+
+    animation: ringRotateReverse 20s linear infinite;
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes heroContentShow {
+
+    from {
+        opacity: 0;
+
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes visualReveal {
+
+    from {
+        opacity: 0;
+
+        transform: scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: scale(1);
+    }
+}
+
+
+@keyframes discountFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+
+@keyframes floatingTag {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+
+@keyframes floatingBag {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(-4deg);
+    }
+
+    50% {
+        transform: translateY(-10px) rotate(4deg);
+    }
+}
+
+
+@keyframes heroCircleFloat {
+
+    0%,
+    100% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(20px, -20px);
+    }
+}
+
+
+@keyframes ringRotate {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+@keyframes ringRotateReverse {
+
+    from {
+        transform: rotate(360deg);
+    }
+
+    to {
+        transform: rotate(0deg);
+    }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .deals-hero {
+        padding: 70px 5%;
+    }
+
+    .deals-hero-content {
+        width: 55%;
+    }
+
+    .hero-deal-visual {
+        width: 42%;
+    }
+
+    .discount-circle {
+        width: 230px;
+        height: 230px;
+    }
+
+    .discount-circle strong {
+        font-size: 65px;
+    }
+
+    .visual-ring-one {
+        width: 300px;
+        height: 300px;
+    }
+
+    .visual-ring-two {
+        width: 350px;
+        height: 350px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .deals-hero {
+
+        min-height: auto;
+
+        flex-direction: column;
+
+        padding: 55px 20px 70px;
+
+        text-align: center;
+    }
+
+
+    .deals-hero-content {
+
+        width: 100%;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
+    }
+
+
+    .deals-label {
+
+        margin-bottom: 18px;
+
+        font-size: 9px;
+    }
+
+
+    .deals-hero h1 {
+
+        font-size: 40px;
+
+        line-height: 1.08;
+
+        letter-spacing: -1.5px;
+    }
+
+
+    .deals-hero h1 span {
+
+        margin-top: 6px;
+    }
+
+
+    .deals-hero-content > p {
+
+        max-width: 450px;
+
+        margin: 20px auto;
+
+        font-size: 12px;
+
+        line-height: 1.7;
+    }
+
+
+    .deal-timer-title {
+
+        justify-content: center;
+
+        font-size: 11px;
+    }
+
+
+    .deal-timer {
+
+        gap: 5px;
+
+        margin-bottom: 25px;
+    }
+
+
+    .timer-box {
+
+        width: 58px;
+
+        height: 65px;
+    }
+
+
+    .timer-box strong {
+
+        font-size: 19px;
+    }
+
+
+    .timer-box span {
+
+        font-size: 7px;
+    }
+
+
+    .timer-colon {
+
+        font-size: 17px;
+    }
+
+
+    .shop-deals-btn {
+
+        padding: 14px 23px;
+    }
+
+
+    /* Visual */
+
+    .hero-deal-visual {
+
+        width: 100%;
+
+        height: 300px;
+
+        margin-top: 25px;
+    }
+
+
+    .discount-circle {
+
+        width: 200px;
+
+        height: 200px;
+    }
+
+
+    .discount-percent-icon {
+
+        font-size: 22px;
+    }
+
+
+    .discount-circle strong {
+
+        font-size: 55px;
+    }
+
+
+    .discount-circle span {
+
+        font-size: 11px;
+
+        letter-spacing: 3px;
+    }
+
+
+    .floating-tag {
+
+        top: 20px;
+
+        right: 35px;
+
+        padding: 10px 15px;
+
+        font-size: 9px;
+    }
+
+
+    .floating-bag {
+
+        left: 35px;
+
+        bottom: 20px;
+
+        width: 55px;
+
+        height: 55px;
+
+        font-size: 21px;
+    }
+
+
+    .visual-ring-one {
+
+        width: 240px;
+
+        height: 240px;
+    }
+
+
+    .visual-ring-two {
+
+        width: 280px;
+
+        height: 280px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+    .deals-hero {
+
+        padding: 45px 15px 60px;
+    }
+
+
+    .deals-hero h1 {
+
+        font-size: 33px;
+
+        letter-spacing: -1px;
+    }
+
+
+    .deals-hero-content > p {
+
+        font-size: 11px;
+    }
+
+
+    .deal-timer {
+
+        gap: 3px;
+    }
+
+
+    .timer-box {
+
+        width: 52px;
+
+        height: 60px;
+
+        border-radius: 11px;
+    }
+
+
+    .timer-box strong {
+
+        font-size: 17px;
+    }
+
+
+    .timer-box span {
+
+        font-size: 6px;
+    }
+
+
+    .timer-colon {
+
+        font-size: 14px;
+    }
+
+
+    .hero-deal-visual {
+
+        height: 260px;
+    }
+
+
+    .discount-circle {
+
+        width: 175px;
+
+        height: 175px;
+    }
+
+
+    .discount-circle strong {
+
+        font-size: 46px;
+    }
+
+
+    .floating-tag {
+
+        right: 15px;
+    }
+
+
+    .floating-bag {
+
+        left: 20px;
+    }
+
+}

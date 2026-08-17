@@ -1,0 +1,597 @@
+/* =========================================================
+   SHOPSTACK - DEAL COUPONS
+========================================================= */
+
+.deal-coupons-section {
+    width: 100%;
+
+    padding: 70px 8% 90px;
+
+    background: #f8f4ee;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   SECTION HEADER
+========================================================= */
+
+.deal-coupons-header {
+    max-width: 650px;
+
+    margin: 0 auto 40px;
+
+    text-align: center;
+}
+
+
+.deal-coupons-label {
+    color: #a9552f;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+
+.deal-coupons-header h2 {
+    margin: 8px 0 10px;
+
+    color: #29251f;
+
+    font-size: 40px;
+
+    line-height: 1.1;
+
+    letter-spacing: -1px;
+
+    font-weight: 700;
+}
+
+
+.deal-coupons-header p {
+    max-width: 500px;
+
+    margin: auto;
+
+    color: #83786f;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   COUPON GRID
+========================================================= */
+
+.deal-coupons-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 22px;
+
+    max-width: 1200px;
+
+    margin: auto;
+}
+
+
+/* =========================================================
+   COUPON CARD
+========================================================= */
+
+.deal-coupon-card {
+    position: relative;
+
+    min-height: 285px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 30px 25px;
+
+    overflow: hidden;
+
+    border: 1px solid #e4d7cc;
+
+    border-radius: 24px;
+
+    background: #ffffff;
+
+    text-align: center;
+
+    box-shadow:
+        0 12px 35px rgba(67, 45, 30, 0.06);
+
+    box-sizing: border-box;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+
+.deal-coupon-card:hover {
+
+    transform: translateY(-8px);
+
+    border-color: #d0aa96;
+
+    box-shadow:
+        0 20px 45px rgba(67, 45, 30, 0.12);
+}
+
+
+/* =========================================================
+   CARD DECORATIONS
+========================================================= */
+
+.coupon-decoration-left,
+.coupon-decoration-right {
+    position: absolute;
+
+    width: 90px;
+
+    height: 90px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(169, 85, 47, 0.08);
+
+    pointer-events: none;
+}
+
+
+.coupon-decoration-left {
+    left: -55px;
+
+    top: -55px;
+}
+
+
+.coupon-decoration-right {
+    right: -55px;
+
+    bottom: -55px;
+}
+
+
+/* =========================================================
+   ICON
+========================================================= */
+
+.deal-coupon-icon {
+    position: relative;
+
+    z-index: 2;
+
+    width: 58px;
+
+    height: 58px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-bottom: 15px;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f5e5da,
+            #ead2c2
+        );
+
+    color: #a9552f;
+
+    font-size: 21px;
+
+    box-shadow:
+        0 8px 18px rgba(169, 85, 47, 0.10);
+
+    transition: 0.3s ease;
+}
+
+
+.deal-coupon-card:hover .deal-coupon-icon {
+
+    transform: rotate(-5deg) scale(1.08);
+
+    background: #a9552f;
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.deal-coupon-content {
+    position: relative;
+
+    z-index: 2;
+}
+
+
+.deal-coupon-content > span {
+
+    color: #a9552f;
+
+    font-size: 8px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+}
+
+
+.deal-coupon-content h3 {
+
+    margin: 7px 0;
+
+    color: #29251f;
+
+    font-size: 25px;
+
+    line-height: 1;
+
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   COUPON CODE
+========================================================= */
+
+.coupon-code {
+
+    display: inline-block;
+
+    padding: 6px 13px;
+
+    margin-bottom: 10px;
+
+    border: 1px dashed #c9a994;
+
+    border-radius: 7px;
+
+    background: #faf5f0;
+
+    color: #a9552f;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+}
+
+
+.deal-coupon-content p {
+
+    max-width: 220px;
+
+    margin: 0 auto 18px;
+
+    color: #81766e;
+
+    font-size: 10px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   COPY BUTTON
+========================================================= */
+
+.coupon-copy-btn {
+
+    position: relative;
+
+    z-index: 2;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 7px;
+
+    min-width: 115px;
+
+    padding: 10px 16px;
+
+    border: 1px solid #29251f;
+
+    border-radius: 30px;
+
+    background: #29251f;
+
+    color: #ffffff;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+.coupon-copy-btn:hover {
+
+    background: #a9552f;
+
+    border-color: #a9552f;
+
+    transform: translateY(-2px);
+}
+
+
+.coupon-copy-btn.copied {
+
+    background: #477b55;
+
+    border-color: #477b55;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .deal-coupons-section {
+
+        padding: 60px 5% 70px;
+    }
+
+
+    .deal-coupons-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .deal-coupon-card:last-child {
+
+        grid-column: span 2;
+
+        max-width: 400px;
+
+        width: 100%;
+
+        margin: auto;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE - MAX WIDTH 500px
+========================================================= */
+
+@media (max-width: 500px) {
+
+    .deal-coupons-section {
+
+        padding: 45px 15px 60px;
+    }
+
+
+    /* Header */
+
+    .deal-coupons-header {
+
+        margin-bottom: 30px;
+    }
+
+
+    .deal-coupons-label {
+
+        font-size: 8px;
+
+        letter-spacing: 1.5px;
+    }
+
+
+    .deal-coupons-header h2 {
+
+        margin-top: 7px;
+
+        font-size: 30px;
+
+        letter-spacing: -0.5px;
+    }
+
+
+    .deal-coupons-header p {
+
+        max-width: 330px;
+
+        font-size: 11px;
+
+        line-height: 1.7;
+    }
+
+
+    /* Grid */
+
+    .deal-coupons-grid {
+
+        display: grid;
+
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+    }
+
+
+    /* Cards */
+
+    .deal-coupon-card {
+
+        width: 100%;
+
+        min-height: 260px;
+
+        padding: 28px 20px;
+
+        border-radius: 21px;
+    }
+
+
+    .deal-coupon-card:last-child {
+
+        grid-column: auto;
+
+        max-width: none;
+    }
+
+
+    /* Icon */
+
+    .deal-coupon-icon {
+
+        width: 52px;
+
+        height: 52px;
+
+        margin-bottom: 13px;
+
+        border-radius: 16px;
+
+        font-size: 19px;
+    }
+
+
+    /* Content */
+
+    .deal-coupon-content > span {
+
+        font-size: 7px;
+
+        letter-spacing: 1.2px;
+    }
+
+
+    .deal-coupon-content h3 {
+
+        margin: 7px 0;
+
+        font-size: 23px;
+    }
+
+
+    .coupon-code {
+
+        padding: 5px 12px;
+
+        font-size: 10px;
+    }
+
+
+    .deal-coupon-content p {
+
+        max-width: 250px;
+
+        margin-bottom: 16px;
+
+        font-size: 9px;
+    }
+
+
+    /* Button */
+
+    .coupon-copy-btn {
+
+        min-width: 110px;
+
+        padding: 9px 14px;
+
+        font-size: 8px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE - MAX WIDTH 380px
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .deal-coupons-section {
+
+        padding: 40px 12px 50px;
+    }
+
+
+    .deal-coupons-header h2 {
+
+        font-size: 27px;
+    }
+
+
+    .deal-coupons-header p {
+
+        font-size: 10px;
+    }
+
+
+    .deal-coupon-card {
+
+        min-height: 245px;
+
+        padding: 24px 16px;
+    }
+
+
+    .deal-coupon-icon {
+
+        width: 48px;
+
+        height: 48px;
+
+        font-size: 17px;
+    }
+
+
+    .deal-coupon-content h3 {
+
+        font-size: 21px;
+    }
+
+
+    .deal-coupon-content p {
+
+        font-size: 8px;
+    }
+
+}

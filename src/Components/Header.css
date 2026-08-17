@@ -7,7 +7,8 @@
     top: 0;
     z-index: 1000;
     width: 100%;
-    background: transparent;
+    /* background: transparent; */
+    background: rgba(255, 255, 255, 0.88);
     border-bottom: 1px solid rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
@@ -101,7 +102,7 @@
     color: #6f675f;
     text-decoration: none;
     font-size: 14px;
-    font-weight: 550;
+    font-weight: 700;
     transition: color 0.25s ease;
 }
 
@@ -264,7 +265,7 @@
         border: 1px solid rgba(229, 223, 215, 0.85);
         border-radius: 40px;
         padding: 8px 10px;
-        box-shadow: 
+        box-shadow:
             0 12px 32px rgba(41, 37, 31, 0.12),
             0 3px 10px rgba(0, 0, 0, 0.04),
             inset 0 1px 0 rgba(255, 255, 255, 0.8);
