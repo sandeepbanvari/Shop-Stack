@@ -1,27 +1,286 @@
-.loader-container {
+/* =========================================================
+   SHOPSTACK LOADER
+========================================================= */
+
+.website-loader {
+    position: fixed;
+
+    inset: 0;
+
     width: 100%;
     height: 100vh;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    z-index: 99999;
 
-    background: #111827;
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #fffaf6 0%,
+            #f8f2ec 45%,
+            #eee5dc 100%
+        );
+
+    overflow: hidden;
+
+    animation: loaderFadeIn 0.5s ease;
 }
 
-.loader {
-    width: 50px;
-    height: 50px;
 
-    border: 5px solid #374151;
-    border-top: 5px solid #6366f1;
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.loader-content {
+    width: 90%;
+
+    max-width: 420px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   LOGO WRAPPER
+========================================================= */
+
+.loader-logo-wrapper {
+    position: relative;
+
+    width: 150px;
+    height: 150px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 18px;
+}
+
+
+/* =========================================================
+   ROTATING RING
+========================================================= */
+
+.loader-ring {
+    position: absolute;
+
+    inset: 0;
+
+    width: 150px;
+    height: 150px;
+
+    box-sizing: border-box;
+
+    border: 3px solid rgba(169, 85, 47, 0.12);
+
+    border-top-color: #a9552f;
+
+    border-right-color: #a9552f;
 
     border-radius: 50%;
 
-    animation: spin 1s linear infinite;
+    animation: loaderRotate 1.2s linear infinite;
 }
 
-@keyframes spin {
+
+/* Second decorative ring */
+
+.loader-ring::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 9px;
+
+    border: 1px dashed rgba(169, 85, 47, 0.25);
+
+    border-radius: 50%;
+
+    animation: loaderRotateReverse 2s linear infinite;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.loader-logo {
+    position: relative;
+
+    z-index: 2;
+
+    width: 95px;
+    height: 95px;
+
+    object-fit: contain;
+
+    animation: logoFloat 2s ease-in-out infinite;
+
+    filter:
+        drop-shadow(
+            0 8px 18px rgba(169, 85, 47, 0.15)
+        );
+}
+
+
+/* =========================================================
+   BRAND
+========================================================= */
+
+.loader-brand {
+    margin: 0 0 20px;
+
+    color: #29251f;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 25px;
+
+    font-weight: 750;
+
+    letter-spacing: -0.8px;
+
+    animation: brandReveal 0.8s ease;
+}
+
+
+/* =========================================================
+   PROGRESS BAR
+========================================================= */
+
+.loader-progress {
+    position: relative;
+
+    width: 230px;
+
+    height: 5px;
+
+    overflow: hidden;
+
+    border-radius: 20px;
+
+    background: rgba(169, 85, 47, 0.12);
+
+    margin-bottom: 14px;
+}
+
+
+.loader-progress-bar {
+    height: 100%;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #8f4e32,
+            #a9552f,
+            #c57a58
+        );
+
+    transition: width 0.8s linear;
+
+    box-shadow:
+        0 0 10px rgba(169, 85, 47, 0.25);
+}
+
+
+/* Moving shine */
+
+.loader-progress-bar::after {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -50px;
+
+    width: 50px;
+    height: 100%;
+
+    background: rgba(255, 255, 255, 0.4);
+
+    transform: skewX(-20deg);
+
+    animation: progressShine 1.2s linear infinite;
+}
+
+
+/* =========================================================
+   COUNTDOWN
+========================================================= */
+
+.loader-time {
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 12px;
+
+    border-radius: 50%;
+
+    background: #29251f;
+
+    color: #ffffff;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    box-shadow:
+        0 8px 20px rgba(41, 37, 31, 0.16);
+
+    animation: timePulse 1s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   LOADING TEXT
+========================================================= */
+
+.loader-text {
+    margin: 0;
+
+    color: #81786f;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 12px;
+
+    font-weight: 500;
+
+    letter-spacing: 0.2px;
+
+    animation: textPulse 1.5s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes loaderRotate {
+
     from {
         transform: rotate(0deg);
     }
@@ -29,4 +288,158 @@
     to {
         transform: rotate(360deg);
     }
+
+}
+
+
+@keyframes loaderRotateReverse {
+
+    from {
+        transform: rotate(360deg);
+    }
+
+    to {
+        transform: rotate(0deg);
+    }
+
+}
+
+
+@keyframes logoFloat {
+
+    0%,
+    100% {
+        transform: translateY(0) scale(1);
+    }
+
+    50% {
+        transform: translateY(-6px) scale(1.03);
+    }
+
+}
+
+
+@keyframes brandReveal {
+
+    from {
+        opacity: 0;
+
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+
+}
+
+
+@keyframes timePulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.08);
+    }
+
+}
+
+
+@keyframes textPulse {
+
+    0%,
+    100% {
+        opacity: 0.55;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+}
+
+
+@keyframes progressShine {
+
+    from {
+        left: -50px;
+    }
+
+    to {
+        left: 100%;
+    }
+
+}
+
+
+@keyframes loaderFadeIn {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 500px) {
+
+    .loader-logo-wrapper {
+        width: 125px;
+        height: 125px;
+
+        margin-bottom: 15px;
+    }
+
+
+    .loader-ring {
+        width: 125px;
+        height: 125px;
+    }
+
+
+    .loader-logo {
+        width: 78px;
+        height: 78px;
+    }
+
+
+    .loader-brand {
+        font-size: 22px;
+
+        margin-bottom: 18px;
+    }
+
+
+    .loader-progress {
+        width: 200px;
+
+        height: 4px;
+    }
+
+
+    .loader-time {
+        width: 42px;
+        height: 42px;
+
+        font-size: 15px;
+    }
+
+
+    .loader-text {
+        font-size: 11px;
+    }
+
 }

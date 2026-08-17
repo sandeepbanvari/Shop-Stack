@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import {
     FaLaptop,
@@ -51,34 +52,114 @@ export const Categories = () => {
     return (
         <section className="categories-section">
 
-            <div className="section-title">
+            {/* Section Heading */}
+
+            <motion.div
+                className="section-title"
+                initial={{
+                    opacity: 0,
+                    y: 50
+                }}
+                whileInView={{
+                    opacity: 1,
+                    y: 0
+                }}
+                viewport={{
+                    once: true,
+                    amount: 0.3
+                }}
+                transition={{
+                    duration: 0.7,
+                    ease: "easeOut"
+                }}
+            >
+
                 <h2>Shop by Category</h2>
-                <p>Explore top trending categories</p>
-            </div>
+
+                <p>
+                    Explore top trending categories
+                </p>
+
+            </motion.div>
+
+
+            {/* Categories */}
 
             <div className="categories-grid">
 
-                {categories.map((cat) => (
+                {categories.map((cat, index) => (
 
-                    <Link
+                    <motion.div
                         key={cat.slug}
-                        to={`/products?category=${cat.slug}`}
-                        className="category-card"
+
+                        initial={{
+                            opacity: 0,
+                            y: 60,
+                            scale: 0.95
+                        }}
+
+                        whileInView={{
+                            opacity: 1,
+                            y: 0,
+                            scale: 1
+                        }}
+
+                        viewport={{
+                            once: true,
+                            amount: 0.2
+                        }}
+
+                        transition={{
+                            duration: 0.6,
+                            delay: index * 0.1,
+                            ease: "easeOut"
+                        }}
+
+                        whileHover={{
+                            y: -8,
+                            scale: 1.03
+                        }}
+
+                        whileTap={{
+                            scale: 0.97
+                        }}
                     >
 
-                        <div
-                            className="category-icon"
-                            style={{
-                                backgroundColor: `${cat.color}15`,
-                                color: cat.color
-                            }}
+                        <Link
+                            to={`/products?category=${cat.slug}`}
+                            className="category-card"
                         >
-                            {cat.icon}
-                        </div>
 
-                        <h3>{cat.name}</h3>
+                            <motion.div
+                                className="category-icon"
 
-                    </Link>
+                                style={{
+                                    backgroundColor: `${cat.color}15`,
+                                    color: cat.color
+                                }}
+
+                                whileHover={{
+                                    rotate: 8,
+                                    scale: 1.12
+                                }}
+
+                                transition={{
+                                    type: "spring",
+                                    stiffness: 300,
+                                    damping: 12
+                                }}
+                            >
+                                {cat.icon}
+                            </motion.div>
+
+
+                            <h3>
+                                {cat.name}
+                            </h3>
+
+                        </Link>
+
+                    </motion.div>
 
                 ))}
 

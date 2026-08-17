@@ -51,6 +51,9 @@ export const Header = () => {
 
           {/* Right Side Action Icons */}
           <div className="header-actions">
+            <Link to="/products" className="action-icon-btn" title="Products">
+              <i className="fa-solid fa-magnifying-glass"></i>
+            </Link>
             <Link to="/wishlist" className="action-icon-btn" title="Wishlist">
               <i className="fa-regular fa-heart"></i>
             </Link>

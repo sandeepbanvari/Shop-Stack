@@ -1,0 +1,86 @@
+/* =========================================
+   SCROLL TO TOP BUTTON
+========================================= */
+
+.scroll-top-btn {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    width: 46px;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 50%;
+    background: #29251f;
+    color: #ffffff;
+    font-size: 15px;
+    cursor: pointer;
+    z-index: 9990;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease,
+        transform 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* =========================================
+   SHOW BUTTON
+========================================= */
+
+.scroll-top-btn.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+
+/* =========================================
+   HOVER
+========================================= */
+
+.scroll-top-btn:hover {
+    background: #a9552f;
+    transform: translateY(-4px);
+    box-shadow:
+        0 10px 25px rgba(169, 85, 47, 0.25);
+}
+
+
+/* =========================================
+   CLICK
+========================================= */
+
+.scroll-top-btn:active {
+    transform: scale(0.92);
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 500px) {
+
+    .scroll-top-btn {
+        right: 16px;
+
+        /*
+         * Keep it above your
+         * mobile bottom navigation
+         */
+        bottom: 80px;
+
+        width: 42px;
+        height: 42px;
+
+        font-size: 13px;
+    }
+
+}
