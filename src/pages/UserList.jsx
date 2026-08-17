@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from "react"
 import { Header } from "../Components/Header"
 import axios from "axios"
+import './UserList.css'
 
 export const UserList = () => {
     let [user, setUsers] = useState([])

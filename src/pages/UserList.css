@@ -1,0 +1,571 @@
+/* =========================================================
+   SHOPSTACK - USER LIST
+   MODERN UI
+========================================================= */
+
+.container.my-5 {
+    width: 92%;
+    max-width: 1250px;
+
+    margin: 45px auto 70px !important;
+
+    font-family: "Poppins", sans-serif;
+
+    color: #29251f;
+}
+
+
+/* =========================================================
+   SEARCH SECTION
+========================================================= */
+
+.container.my-5 .row.my-3 {
+    margin-bottom: 28px !important;
+
+    display: flex;
+    align-items: center;
+}
+
+
+.container.my-5 .col-5 {
+    width: 100%;
+    max-width: 430px;
+}
+
+
+.container.my-5 .form-control {
+    height: 50px;
+
+    padding: 0 20px;
+
+    border: 1px solid #e5ddd5;
+
+    border-radius: 14px;
+
+    background: #ffffff;
+
+    color: #29251f;
+
+    font-size: 13px;
+
+    box-shadow:
+        0 5px 20px rgba(41, 37, 31, 0.05);
+
+    transition: all 0.25s ease;
+}
+
+
+.container.my-5 .form-control::placeholder {
+    color: #aaa19a;
+}
+
+
+.container.my-5 .form-control:hover {
+    border-color: #cfc3b9;
+}
+
+
+.container.my-5 .form-control:focus {
+    border-color: #b66b48;
+
+    box-shadow:
+        0 0 0 4px rgba(182, 107, 72, 0.08);
+
+    outline: none;
+}
+
+
+/* =========================================================
+   TABLE CONTAINER
+========================================================= */
+
+.container.my-5 .row:nth-child(2) {
+    background: #ffffff;
+
+    border-radius: 20px;
+
+    padding: 5px;
+
+    box-shadow:
+        0 12px 40px rgba(41, 37, 31, 0.07);
+}
+
+
+/* =========================================================
+   TABLE
+========================================================= */
+
+.container.my-5 .table {
+    width: 100%;
+
+    margin: 0;
+
+    border-collapse: separate;
+
+    border-spacing: 0;
+
+    border-radius: 16px;
+
+    overflow: hidden;
+
+    background: #ffffff;
+}
+
+
+/* Remove Bootstrap dark theme */
+
+.container.my-5 .table-dark {
+    --bs-table-bg: #ffffff;
+    --bs-table-color: #29251f;
+    --bs-table-border-color: transparent;
+
+    --bs-table-striped-bg: #ffffff;
+
+    --bs-table-striped-color: #29251f;
+
+    --bs-table-hover-bg: #fbf8f5;
+
+    --bs-table-hover-color: #29251f;
+}
+
+
+/* =========================================================
+   TABLE HEADER
+========================================================= */
+
+.container.my-5 .table thead {
+    background: #f8f4f0;
+}
+
+
+.container.my-5 .table thead th {
+    height: 55px;
+
+    padding: 0 18px;
+
+    border: none;
+
+    color: #81786f;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.7px;
+
+    vertical-align: middle;
+}
+
+
+.container.my-5 .table thead th:first-child {
+    border-top-left-radius: 14px;
+}
+
+
+.container.my-5 .table thead th:last-child {
+    border-top-right-radius: 14px;
+}
+
+
+/* =========================================================
+   TABLE BODY
+========================================================= */
+
+.container.my-5 .table tbody tr {
+    background: #ffffff;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.container.my-5 .table tbody tr:hover {
+    background: #fdf9f6;
+}
+
+
+.container.my-5 .table tbody td {
+    height: 62px;
+
+    padding: 0 18px;
+
+    border: none;
+
+    border-bottom: 1px solid #f0ebe6;
+
+    color: #665f58;
+
+    font-size: 12px;
+
+    vertical-align: middle;
+}
+
+
+/* First column */
+
+.container.my-5 .table tbody td:first-child {
+    color: #a9552f;
+
+    font-weight: 700;
+}
+
+
+/* First Name */
+
+.container.my-5 .table tbody td:nth-child(2) {
+    color: #29251f;
+
+    font-weight: 650;
+}
+
+
+/* Email */
+
+.container.my-5 .table tbody td:nth-child(3) {
+    color: #81786f;
+
+    font-size: 11px;
+}
+
+
+/* Gender */
+
+.container.my-5 .table tbody td:nth-child(4) {
+    text-transform: capitalize;
+}
+
+
+/* =========================================================
+   GENDER STYLE
+========================================================= */
+
+.container.my-5 .table tbody td:nth-child(4)::before {
+    content: "";
+
+    display: inline-block;
+
+    width: 6px;
+    height: 6px;
+
+    margin-right: 7px;
+
+    border-radius: 50%;
+
+    background: #b66b48;
+
+    vertical-align: middle;
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.container.my-5 .btn {
+    height: 34px;
+
+    padding: 0 15px;
+
+    border-radius: 9px;
+
+    border: none;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 10px;
+
+    font-weight: 650;
+
+    transition:
+        all 0.2s ease;
+}
+
+
+/* Edit */
+
+.container.my-5 .btn-primary {
+    background: #f3ebe5;
+
+    color: #92502f;
+
+    border: 1px solid #ead8cd;
+}
+
+
+.container.my-5 .btn-primary:hover {
+    background: #a9552f;
+
+    color: #ffffff;
+
+    border-color: #a9552f;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 7px 16px rgba(169, 85, 47, 0.18);
+}
+
+
+/* Delete */
+
+.container.my-5 .btn-danger {
+    background: #fff2f0;
+
+    color: #c04b40;
+
+    border: 1px solid #f2d7d3;
+}
+
+
+.container.my-5 .btn-danger:hover {
+    background: #c04b40;
+
+    color: #ffffff;
+
+    border-color: #c04b40;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 7px 16px rgba(192, 75, 64, 0.18);
+}
+
+
+/* =========================================================
+   OFFCANVAS
+========================================================= */
+
+.offcanvas {
+    width: 420px !important;
+
+    background: #ffffff;
+
+    border-left: 1px solid #eee7e0;
+
+    font-family: "Poppins", sans-serif;
+
+    box-shadow:
+        -15px 0 50px rgba(41, 37, 31, 0.12);
+}
+
+
+/* =========================================================
+   OFFCANVAS HEADER
+========================================================= */
+
+.offcanvas-header {
+    padding: 25px;
+
+    border-bottom: 1px solid #eee8e2;
+}
+
+
+.offcanvas-title {
+    color: #29251f;
+
+    font-size: 19px;
+
+    font-weight: 700;
+}
+
+
+.offcanvas-header .btn-close {
+    opacity: 0.5;
+
+    transition: 0.2s ease;
+}
+
+
+.offcanvas-header .btn-close:hover {
+    opacity: 1;
+
+    transform: rotate(90deg);
+}
+
+
+/* =========================================================
+   OFFCANVAS BODY
+========================================================= */
+
+.offcanvas-body {
+    padding: 30px 25px;
+}
+
+
+.offcanvas-body .mb-3 {
+    margin-bottom: 23px !important;
+}
+
+
+.offcanvas-body .form-label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #49423c;
+
+    font-size: 11px;
+
+    font-weight: 650;
+}
+
+
+.offcanvas-body .form-control {
+    height: 49px;
+
+    padding: 0 15px;
+
+    border: 1px solid #e0d8d0;
+
+    border-radius: 11px;
+
+    background: #faf8f6;
+
+    color: #29251f;
+
+    font-size: 12px;
+
+    box-shadow: none;
+}
+
+
+.offcanvas-body .form-control:focus {
+    border-color: #a9552f;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 0 0 4px rgba(169, 85, 47, 0.08);
+}
+
+
+/* =========================================================
+   SAVE BUTTON
+========================================================= */
+
+.offcanvas-body .btn-success {
+    width: 100%;
+
+    height: 48px;
+
+    margin-top: 5px;
+
+    border: none;
+
+    border-radius: 11px;
+
+    background: #29251f;
+
+    color: #ffffff;
+
+    font-size: 12px;
+
+    font-weight: 650;
+
+    transition: all 0.25s ease;
+}
+
+
+.offcanvas-body .btn-success:hover {
+    background: #a9552f;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 22px rgba(169, 85, 47, 0.18);
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .container.my-5 {
+        width: 94%;
+
+        margin-top: 30px !important;
+    }
+
+
+    .container.my-5 .col-5 {
+        width: 100%;
+
+        max-width: none;
+    }
+
+
+    /* Horizontal scrolling */
+
+    .container.my-5 .row:nth-child(2) {
+        overflow-x: auto;
+
+        -webkit-overflow-scrolling: touch;
+    }
+
+
+    .container.my-5 .table {
+        min-width: 850px;
+    }
+
+
+    .container.my-5 .table thead th {
+        height: 50px;
+
+        padding: 0 14px;
+    }
+
+
+    .container.my-5 .table tbody td {
+        height: 57px;
+
+        padding: 0 14px;
+    }
+
+
+    .offcanvas {
+        width: 90% !important;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 500px) {
+
+    .container.my-5 {
+        width: 92%;
+
+        margin-top: 25px !important;
+    }
+
+
+    .container.my-5 .form-control {
+        height: 46px;
+
+        border-radius: 12px;
+    }
+
+
+    .offcanvas {
+        width: 92% !important;
+    }
+
+
+    .offcanvas-header {
+        padding: 20px;
+    }
+
+
+    .offcanvas-body {
+        padding: 22px 20px;
+    }
+
+}

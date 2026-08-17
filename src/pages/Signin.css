@@ -1,26 +1,19 @@
 /* =========================================================
-   SHOPSTACK — SIGN IN
-   PREMIUM GLASSMORPHIC UI
+   SHOPSTACK — SIGN IN (NO-SCROLL VIEWPORT FIT)
 ========================================================= */
 
 .signin-page {
     position: relative;
-
-    min-height: 100vh;
+    height: 100vh;
+    height: 100dvh;
     width: 100%;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
-    padding: 40px 20px;
-
+    padding: 20px;
     box-sizing: border-box;
-
     overflow: hidden;
-
     font-family: "Poppins", sans-serif;
-
     background:
         linear-gradient(
             135deg,
@@ -28,12 +21,10 @@
             rgba(82, 57, 43, 0.55)
         ),
         url("https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=1800&auto=format&fit=crop");
-
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
-
 
 /* =========================================================
    BACKGROUND DECORATION
@@ -41,119 +32,52 @@
 
 .signin-page::before {
     content: "";
-
     position: absolute;
-
-    width: 420px;
-    height: 420px;
-
-    top: -180px;
-    left: -120px;
-
+    width: 380px;
+    height: 380px;
+    top: -140px;
+    left: -100px;
     border-radius: 50%;
-
     background: rgba(218, 177, 151, 0.18);
-
     filter: blur(2px);
-
     animation: floatOne 8s ease-in-out infinite;
+    pointer-events: none;
 }
 
-
-.banner-label {
-    display: inline-block;
-
-    margin-bottom: 18px;
-
-    color: #e0a985;
-
-    font-size: 11px;
-
-    font-weight: 700;
-
-    letter-spacing: 2px;
-}
-
-
-.banner-content h2 {
-    margin: 0;
-
-    color: #ffffff;
-
-    font-size: clamp(48px, 5vw, 72px);
-
-    line-height: 0.95;
-
-    font-weight: 700;
-
-    letter-spacing: -3px;
-}
-
-
-.banner-content h2 span {
-    color: #e0a985;
-
-    font-family: Georgia, serif;
-
-    font-style: italic;
-
-    font-weight: 400;
-}
-
-
-.banner-content p {
-    max-width: 420px;
-
-    margin: 24px 0 0;
-
-    color: #eee7e1;
-
-    font-size: 13px;
-
-    line-height: 1.8;
-}
 .signin-page::after {
     content: "";
-
     position: absolute;
-
-    width: 350px;
-    height: 350px;
-
-    right: -130px;
-    bottom: -150px;
-
+    width: 300px;
+    height: 300px;
+    right: -100px;
+    bottom: -120px;
     border-radius: 50%;
-
     background: rgba(191, 145, 116, 0.18);
-
     animation: floatTwo 9s ease-in-out infinite;
+    pointer-events: none;
 }
-
 
 @keyframes floatOne {
-    0%,
-    100% {
+    0%, 100% {
         transform: translateY(0);
     }
-
     50% {
-        transform: translateY(25px);
+        transform: translateY(20px);
     }
 }
-
 
 @keyframes floatTwo {
-    0%,
-    100% {
+    0%, 100% {
         transform: translateY(0);
     }
-
     50% {
-        transform: translateY(-25px);
+        transform: translateY(-20px);
     }
 }
 
+.signin-banner {
+    display: none;
+}
 
 /* =========================================================
    FORM CONTAINER
@@ -161,16 +85,12 @@
 
 .signin-form-container {
     position: relative;
-
     z-index: 5;
-
     width: 100%;
-
     display: flex;
     align-items: center;
     justify-content: center;
 }
-
 
 /* =========================================================
    LOGIN BOX
@@ -178,87 +98,66 @@
 
 .signin-form-box {
     width: 100%;
-    max-width: 430px;
-
-    padding: 42px;
-
+    max-width: 420px;
+    max-height: calc(100vh - 30px);
+    max-height: calc(100dvh - 30px);
+    padding: 32px 36px;
     box-sizing: border-box;
-
-    border: 1px solid rgba(255, 255, 255, 0.25);
-
-    border-radius: 24px;
-
-    background: rgba(255, 255, 255, 0.88);
-
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    border-radius: 22px;
+    background: rgba(255, 255, 255, 0.94);
     backdrop-filter: blur(25px);
     -webkit-backdrop-filter: blur(25px);
-
-    box-shadow:
-        0 30px 80px rgba(0, 0, 0, 0.30);
-
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.30);
     animation: formAppear 0.7s ease forwards;
 }
-
 
 @keyframes formAppear {
     from {
         opacity: 0;
-        transform: translateY(25px) scale(0.97);
+        transform: translateY(20px) scale(0.97);
     }
-
     to {
         opacity: 1;
         transform: translateY(0) scale(1);
     }
 }
 
-
 /* =========================================================
    LOGO
-========================================================= */
+======================================================== */
 
 .signin-logo {
     display: flex;
-
     align-items: center;
     justify-content: center;
-
     gap: 10px;
-
-    margin-bottom: 32px;
-
+    margin-bottom: 20px;
     color: #29251f;
-
     text-decoration: none;
-
-    font-size: 21px;
-
+    font-size: 20px;
     font-weight: 750;
+    transition: transform 0.25s ease;
 }
 
+.signin-logo:hover {
+    transform: translateY(-1px);
+}
 
 .signin-logo .logo-icon {
-    width: 42px;
-    height: 42px;
-
-    padding: 10px;
-
+    width: 38px;
+    height: 38px;
+    padding: 9px;
     box-sizing: border-box;
-
-    border-radius: 12px;
-
+    border-radius: 11px;
     background: #29251f;
-
     color: #ffffff;
-
-    font-size: 18px;
+    font-size: 16px;
 }
-
 
 .signin-logo span {
     color: #29251f;
 }
-
 
 /* =========================================================
    HEADER
@@ -266,32 +165,22 @@
 
 .form-header {
     text-align: center;
-
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
-
 
 .form-header h2 {
     margin: 0;
-
     color: #29251f;
-
-    font-size: 32px;
-
+    font-size: 26px;
     font-weight: 750;
-
-    letter-spacing: -1.5px;
+    letter-spacing: -1px;
 }
-
 
 .form-header p {
-    margin: 9px 0 0;
-
+    margin: 5px 0 0;
     color: #81786f;
-
-    font-size: 13px;
+    font-size: 12.5px;
 }
-
 
 /* =========================================================
    FORM
@@ -299,12 +188,9 @@
 
 .signin-form-box form {
     display: flex;
-
     flex-direction: column;
-
-    gap: 18px;
+    gap: 12px;
 }
-
 
 /* =========================================================
    INPUT GROUP
@@ -312,71 +198,48 @@
 
 .input-group {
     display: flex;
-
     flex-direction: column;
-
-    gap: 7px;
+    gap: 4px;
 }
-
 
 .input-group label {
     color: #4d4640;
-
-    font-size: 12px;
-
+    font-size: 11.5px;
     font-weight: 650;
 }
 
-
 .input-group input {
     width: 100%;
-    height: 52px;
-
-    padding: 0 16px;
-
+    height: 44px;
+    padding: 0 14px;
     box-sizing: border-box;
-
     border: 1px solid #ddd4cc;
-
-    border-radius: 12px;
-
+    border-radius: 10px;
     outline: none;
-
-    background: rgba(255, 255, 255, 0.72);
-
+    background: rgba(255, 255, 255, 0.75);
     color: #29251f;
-
     font-family: inherit;
-
-    font-size: 13px;
-
+    font-size: 12.5px;
     transition:
         border-color 0.25s ease,
         background 0.25s ease,
-        box-shadow 0.25s ease,
-        transform 0.25s ease;
+        box-shadow 0.25s ease;
 }
-
 
 .input-group input::placeholder {
     color: #aaa19a;
 }
 
-
 .input-group input:hover {
     border-color: #c9b5a7;
+    background: #ffffff;
 }
-
 
 .input-group input:focus {
     border-color: #a9552f;
-
     background: #ffffff;
-
-    box-shadow:
-        0 0 0 4px rgba(169, 85, 47, 0.08);
+    box-shadow: 0 0 0 3px rgba(169, 85, 47, 0.08);
 }
-
 
 /* =========================================================
    FORGOT PASSWORD
@@ -384,62 +247,42 @@
 
 .forgot-password-wrapper {
     display: flex;
-
     justify-content: flex-end;
-
-    margin-top: -4px;
+    margin-top: -2px;
 }
-
 
 .forgot-password {
     color: #a9552f;
-
-    font-size: 12px;
-
+    font-size: 11.5px;
     font-weight: 650;
-
     text-decoration: none;
-
     transition: color 0.2s ease;
 }
 
-
 .forgot-password:hover {
     color: #7f3f24;
-
     text-decoration: underline;
 }
-
 
 /* =========================================================
    ALERT
 ========================================================= */
 
 .auth-alert {
-    padding: 12px 14px;
-
-    border-radius: 10px;
-
+    padding: 8px 12px;
+    border-radius: 8px;
     border: 1px solid #efcaca;
-
     background: #fff5f5;
-
     color: #b42318;
-
-    font-size: 12px;
-
+    font-size: 11.5px;
     text-align: center;
 }
 
-
 .auth-alert.success {
     border-color: #c8dfcf;
-
     background: #f2faf4;
-
     color: #26733d;
 }
-
 
 /* =========================================================
    BUTTON
@@ -447,155 +290,198 @@
 
 .signin-btn {
     width: 100%;
-    height: 52px;
-
+    height: 46px;
     border: none;
-
-    border-radius: 12px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #29251f,
-            #554238
-        );
-
+    border-radius: 10px;
+    background: linear-gradient(135deg, #29251f, #554238);
     color: #ffffff;
-
     cursor: pointer;
-
     font-family: inherit;
-
     font-size: 13px;
-
     font-weight: 700;
-
+    letter-spacing: 0.3px;
     transition:
         transform 0.25s ease,
         box-shadow 0.25s ease,
         background 0.25s ease;
 }
 
-
 .signin-btn:hover {
     transform: translateY(-2px);
-
-    background:
-        linear-gradient(
-            135deg,
-            #a9552f,
-            #7f3f24
-        );
-
-    box-shadow:
-        0 12px 28px rgba(127, 63, 36, 0.25);
+    background: linear-gradient(135deg, #a9552f, #7f3f24);
+    box-shadow: 0 10px 24px rgba(127, 63, 36, 0.25);
 }
-
 
 .signin-btn:active {
     transform: translateY(0);
 }
-
 
 /* =========================================================
    FOOTER
 ========================================================= */
 
 .form-footer {
-    margin-top: 25px;
-
+    margin-top: 16px;
     text-align: center;
 }
 
-
 .form-footer p {
     margin: 0;
-
     color: #81786f;
-
     font-size: 12px;
 }
 
-
 .form-footer a {
     color: #a9552f;
-
     font-weight: 700;
-
     text-decoration: none;
 }
 
-
 .form-footer a:hover {
+    color: #7d3f24;
     text-decoration: underline;
 }
 
-
 /* =========================================================
-   MOBILE
+   MOBILE VIEW (max-width: 500px) — STRICT NO SCROLL
 ========================================================= */
 
-@media (max-width: 600px) {
-
+@media (max-width: 500px) {
     .signin-page {
-        padding: 20px 15px;
+        height: 100vh;
+        height: 100dvh;
+        max-height: 100vh;
+        max-height: 100dvh;
+        padding: 10px 12px;
+        overflow: hidden;
     }
 
+    .signin-page::before {
+        width: 200px;
+        height: 200px;
+        top: -80px;
+        left: -60px;
+    }
+
+    .signin-page::after {
+        width: 180px;
+        height: 180px;
+        right: -60px;
+        bottom: -70px;
+    }
 
     .signin-form-box {
-        max-width: 420px;
-
-        padding: 30px 22px;
-
-        border-radius: 20px;
+        max-width: 400px;
+        width: 100%;
+        padding: 20px 16px;
+        border-radius: 18px;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.22);
     }
-
 
     .signin-logo {
-        margin-bottom: 25px;
+        margin-bottom: 12px;
+        font-size: 17px;
+        gap: 7px;
     }
 
-
-    .form-header h2 {
-        font-size: 29px;
+    .signin-logo .logo-icon {
+        width: 32px;
+        height: 32px;
+        padding: 7px;
+        font-size: 14px;
+        border-radius: 8px;
     }
-
 
     .form-header {
-        margin-bottom: 25px;
+        margin-bottom: 12px;
     }
-
-
-    .input-group input {
-        height: 50px;
-    }
-
-
-    .signin-btn {
-        height: 50px;
-    }
-
-}
-
-
-/* =========================================================
-   SMALL MOBILE
-========================================================= */
-
-@media (max-width: 380px) {
-
-    .signin-page {
-        padding: 15px 10px;
-    }
-
-
-    .signin-form-box {
-        padding: 27px 18px;
-    }
-
 
     .form-header h2 {
-        font-size: 27px;
+        font-size: 22px;
+        letter-spacing: -0.8px;
     }
 
+    .form-header p {
+        font-size: 11.5px;
+        margin-top: 2px;
+    }
+
+    .signin-form-box form {
+        gap: 9px;
+    }
+
+    .input-group {
+        gap: 3px;
+    }
+
+    .input-group label {
+        font-size: 11px;
+    }
+
+    .input-group input {
+        height: 39px;
+        font-size: 12px;
+        padding: 0 12px;
+        border-radius: 8px;
+    }
+
+    .forgot-password {
+        font-size: 11px;
+    }
+
+    .auth-alert {
+        padding: 6px 10px;
+        font-size: 11px;
+        border-radius: 7px;
+    }
+
+    .signin-btn {
+        height: 40px;
+        font-size: 12.5px;
+        border-radius: 8px;
+        margin-top: 2px;
+    }
+
+    .form-footer {
+        margin-top: 10px;
+    }
+
+    .form-footer p,
+    .form-footer a {
+        font-size: 11.5px;
+    }
+}
+
+/* =========================================================
+   SMALL MOBILE / SHORT HEIGHT VIEWPORTS
+========================================================= */
+
+@media (max-height: 650px) and (max-width: 500px) {
+    .signin-form-box {
+        padding: 14px 14px;
+    }
+
+    .signin-logo {
+        margin-bottom: 8px;
+    }
+
+    .form-header {
+        margin-bottom: 8px;
+    }
+
+    .form-header h2 {
+        font-size: 20px;
+    }
+
+    .signin-form-box form {
+        gap: 7px;
+    }
+
+    .input-group input {
+        height: 36px;
+    }
+
+    .signin-btn {
+        height: 38px;
+    }
 }
