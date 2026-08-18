@@ -1,168 +1,153 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import {
     FaBagShopping,
     FaCopy,
     FaPercent,
     FaTag,
     FaCheck,
+    FaTruckFast,
+    FaGift,
+    FaFire,
 } from "react-icons/fa6";
-
 import "./DealCoupons.css";
 
-export const DealCoupons = () => {
-
+export const DealCoupons = ({ onCopyCoupon }) => {
     const [copiedCode, setCopiedCode] = useState("");
 
     const coupons = [
         {
-            code: "SAVE10",
-            title: "10% OFF",
-            description: "Get 10% OFF on orders above ₹999",
+            code: "FLASH20",
+            discount: "20% OFF",
+            title: "Tech & Audio Super Saver",
+            description: "Get 20% OFF instantly on orders over $99.",
+            expiresIn: "Expires in 2 days",
+            category: "Electronics",
             icon: <FaPercent />,
+            accentColor: "#a9552f",
         },
         {
-            code: "SAVE20",
-            title: "20% OFF",
-            description: "Get 20% OFF on orders above ₹1999",
+            code: "MEGA35",
+            discount: "35% OFF",
+            title: "Fashion & Luxury Footwear",
+            description: "Save 35% on apparel, shoes & accessories.",
+            expiresIn: "Limited vouchers left",
+            category: "Fashion",
             icon: <FaTag />,
+            accentColor: "#e53e3e",
         },
         {
-            code: "FIRST50",
-            title: "₹50 OFF",
-            description: "Get ₹50 OFF on your first order",
-            icon: <FaBagShopping />,
+            code: "FREESHIP",
+            discount: "FREE SHIPPING",
+            title: "Zero-Cost Express Delivery",
+            description: "Enjoy complimentary fast priority shipping.",
+            expiresIn: "No minimum spend",
+            category: "All Orders",
+            icon: <FaTruckFast />,
+            accentColor: "#0284c7",
+        },
+        {
+            code: "VIP50",
+            discount: "$50 FLAT OFF",
+            title: "VIP Mega Cart Reward",
+            description: "Flat $50 rebate on high-value carts over $200.",
+            expiresIn: "VIP Members Only",
+            category: "VIP Exclusive",
+            icon: <FaGift />,
+            accentColor: "#10b981",
         },
     ];
 
-
-    const copyCoupon = async (code) => {
-
+    const copyCoupon = async (coupon) => {
         try {
-
-            await navigator.clipboard.writeText(code);
-
-            setCopiedCode(code);
+            await navigator.clipboard.writeText(coupon.code);
+            setCopiedCode(coupon.code);
 
             setTimeout(() => {
                 setCopiedCode("");
-            }, 2000);
+            }, 2500);
 
+            if (onCopyCoupon) {
+                onCopyCoupon(coupon);
+            }
         } catch (error) {
-
             console.error("Failed to copy coupon:", error);
-
         }
-
     };
 
-
     return (
-        <section className="deal-coupons-section">
-
-            {/* ==============================
-                SECTION HEADER
-            ============================== */}
-
+        <section id="deal-coupons-section" className="deal-coupons-section">
+            {/* Header */}
             <div className="deal-coupons-header">
-
                 <span className="deal-coupons-label">
-                    EXTRA SAVINGS
+                    <FaFire /> EXTRA SAVINGS VOUCHERS
                 </span>
-
-                <h2>
-                    More Ways To Save
-                </h2>
-
+                <h2>Stack More Discounts At Checkout</h2>
                 <p>
-                    Grab an exclusive coupon and save more
-                    on your next ShopStack order.
+                    Copy an exclusive promo voucher code and apply it during checkout to maximize your savings.
                 </p>
-
             </div>
 
-
-            {/* ==============================
-                COUPON CARDS
-            ============================== */}
-
+            {/* Coupons Grid */}
             <div className="deal-coupons-grid">
-
                 {coupons.map((coupon) => (
-
                     <div
-                        className="deal-coupon-card"
+                        className="deal-coupon-ticket"
                         key={coupon.code}
+                        style={{ "--accent-color": coupon.accentColor }}
                     >
+                        {/* Notch cutouts for ticket look */}
+                        <div className="coupon-notch notch-left"></div>
+                        <div className="coupon-notch notch-right"></div>
 
-                        {/* Decorative circles */}
-
-                        <div className="coupon-decoration-left"></div>
-
-                        <div className="coupon-decoration-right"></div>
-
-
-                        {/* Icon */}
-
-                        <div className="deal-coupon-icon">
-                            {coupon.icon}
+                        {/* Top Banner */}
+                        <div className="coupon-ticket-top">
+                            <div className="coupon-icon-box" style={{ background: coupon.accentColor }}>
+                                {coupon.icon}
+                            </div>
+                            <div className="coupon-meta-badge">
+                                <span>{coupon.category}</span>
+                            </div>
                         </div>
 
-
-                        {/* Content */}
-
+                        {/* Main Content */}
                         <div className="deal-coupon-content">
+                            <div className="coupon-discount-val">{coupon.discount}</div>
+                            <h3 className="coupon-title">{coupon.title}</h3>
+                            <p className="coupon-desc">{coupon.description}</p>
+                            <span className="coupon-expiry">{coupon.expiresIn}</span>
+                        </div>
 
-                            <span>
-                                SPECIAL OFFER
-                            </span>
+                        {/* Dashed Separator */}
+                        <div className="coupon-dashed-divider"></div>
 
-                            <h3>
-                                {coupon.title}
-                            </h3>
-
-                            <div className="coupon-code">
-                                {coupon.code}
+                        {/* Voucher Bottom Action */}
+                        <div className="coupon-bottom-action">
+                            <div className="coupon-code-pill">
+                                <code>{coupon.code}</code>
                             </div>
 
-                            <p>
-                                {coupon.description}
-                            </p>
-
+                            <button
+                                type="button"
+                                className={`coupon-copy-btn ${copiedCode === coupon.code ? "copied" : ""}`}
+                                onClick={() => copyCoupon(coupon)}
+                                title="Copy voucher code"
+                            >
+                                {copiedCode === coupon.code ? (
+                                    <>
+                                        <FaCheck /> Copied!
+                                    </>
+                                ) : (
+                                    <>
+                                        <FaCopy /> Copy
+                                    </>
+                                )}
+                            </button>
                         </div>
-
-
-                        {/* Copy Button */}
-
-                        <button
-                            type="button"
-                            className={`coupon-copy-btn ${
-                                copiedCode === coupon.code
-                                    ? "copied"
-                                    : ""
-                            }`}
-                            onClick={() => copyCoupon(coupon.code)}
-                        >
-
-                            {copiedCode === coupon.code ? (
-                                <>
-                                    <FaCheck />
-                                    Copied
-                                </>
-                            ) : (
-                                <>
-                                    <FaCopy />
-                                    Copy Code
-                                </>
-                            )}
-
-                        </button>
-
                     </div>
-
                 ))}
-
             </div>
-
         </section>
     );
 };
+
+export default DealCoupons;

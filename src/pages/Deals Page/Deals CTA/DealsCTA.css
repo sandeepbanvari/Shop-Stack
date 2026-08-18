@@ -1,738 +1,388 @@
 /* =========================================================
-   SHOPSTACK - DEALS CTA
+   SHOPSTACK - DEALS CTA & VIP NEWSLETTER
 ========================================================= */
 
 .deals-cta-section {
     position: relative;
     width: 100%;
-    min-height: 430px;
+    padding: 90px 8% 100px;
+    background: linear-gradient(135deg, #29251f 0%, #3e3228 50%, #543322 100%);
+    color: #ffffff;
+    overflow: hidden;
+    box-sizing: border-box;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 20px 0 0;
-    padding: 70px 8%;
-    overflow: hidden;
-    box-sizing: border-box;
-    background:
-        linear-gradient(
-            135deg,
-            #a9552f 0%,
-            #884728 50%,
-            #65351f 100%
-        );
-    color: #ffffff;
+    text-align: center;
 }
 
-
-/* =========================================================
-   DOT BACKGROUND
-========================================================= */
-
+/* Background Decorations */
 .cta-dots {
     position: absolute;
-
     inset: 0;
-
-    background-image:
-        radial-gradient(
-            rgba(255, 255, 255, 0.14) 1px,
-            transparent 1px
-        );
-
-    background-size: 24px 24px;
-
-    opacity: 0.4;
-
+    background-image: radial-gradient(
+        rgba(255, 255, 255, 0.12) 1.2px,
+        transparent 1.2px
+    );
+    background-size: 22px 22px;
+    opacity: 0.35;
     pointer-events: none;
 }
-
-
-/* =========================================================
-   LARGE CIRCLES
-========================================================= */
 
 .cta-circle {
     position: absolute;
-
     border-radius: 50%;
-
-    border: 1px solid rgba(255, 255, 255, 0.13);
-
+    border: 1px solid rgba(255, 255, 255, 0.08);
     pointer-events: none;
 }
-
 
 .cta-circle-one {
     width: 500px;
     height: 500px;
-
-    left: -300px;
-    top: -300px;
-
-    animation: ctaCircleFloat 8s ease-in-out infinite;
+    left: -200px;
+    top: -200px;
 }
-
 
 .cta-circle-two {
     width: 400px;
     height: 400px;
-
-    right: -250px;
-    bottom: -270px;
-
-    animation: ctaCircleFloat 10s ease-in-out infinite reverse;
+    right: -150px;
+    bottom: -150px;
 }
 
-
-/* =========================================================
-   CONTENT
-========================================================= */
-
-.deals-cta-content {
-    position: relative;
-
-    z-index: 5;
-
-    width: 100%;
-
-    max-width: 700px;
-
-    text-align: center;
-
-    animation: ctaContentReveal 0.8s ease both;
-}
-
-
-/* =========================================================
-   ICON
-========================================================= */
-
-.cta-icon {
-    width: 62px;
-    height: 62px;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    margin: 0 auto 18px;
-
-    border-radius: 20px;
-
-    background: rgba(255, 255, 255, 0.13);
-
-    border: 1px solid rgba(255, 255, 255, 0.18);
-
-    color: #ffffff;
-
-    font-size: 24px;
-
-    box-shadow:
-        0 12px 30px rgba(0, 0, 0, 0.12);
-
-    animation: ctaIconFloat 4s ease-in-out infinite;
-}
-
-
-/* =========================================================
-   LABEL
-========================================================= */
-
-.cta-label {
-    display: block;
-
-    color: #f4d8c7;
-
-    font-size: 10px;
-
-    font-weight: 800;
-
-    letter-spacing: 2px;
-}
-
-
-/* =========================================================
-   HEADING
-========================================================= */
-
-.deals-cta-content h2 {
-    margin: 12px 0 18px;
-
-    color: #ffffff;
-
-    font-size: clamp(40px, 5vw, 60px);
-
-    line-height: 1.05;
-
-    letter-spacing: -2px;
-
-    font-weight: 800;
-}
-
-
-.deals-cta-content h2 span {
-    display: block;
-
-    color: #f6d5c0;
-
-    font-family: Georgia, "Times New Roman", serif;
-
-    font-style: italic;
-
-    font-weight: 400;
-}
-
-
-/* =========================================================
-   DESCRIPTION
-========================================================= */
-
-.deals-cta-content > p {
-    max-width: 540px;
-
-    margin: 0 auto 28px;
-
-    color: #f0dcd0;
-
-    font-size: 13px;
-
-    line-height: 1.8;
-}
-
-
-/* =========================================================
-   BUTTONS
-========================================================= */
-
-.cta-actions {
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    gap: 12px;
-}
-
-
-/* Primary */
-
-.cta-primary-btn {
-    display: inline-flex;
-
-    align-items: center;
-
-    gap: 10px;
-
-    padding: 14px 24px;
-
-    border-radius: 30px;
-
-    background: #ffffff;
-
-    color: #29251f;
-
-    text-decoration: none;
-
-    font-size: 11px;
-
-    font-weight: 700;
-
-    box-shadow:
-        0 10px 25px rgba(0, 0, 0, 0.12);
-
-    transition: 0.3s ease;
-}
-
-
-.cta-primary-btn:hover {
-    background: #29251f;
-
-    color: #ffffff;
-
-    transform: translateY(-3px);
-
-    box-shadow:
-        0 15px 30px rgba(0, 0, 0, 0.18);
-}
-
-
-.cta-primary-btn svg {
-    transition: transform 0.3s ease;
-}
-
-
-.cta-primary-btn:hover svg {
-    transform: translateX(5px);
-}
-
-
-/* Secondary */
-
-.cta-secondary-btn {
-    display: inline-flex;
-
-    align-items: center;
-    justify-content: center;
-
-    padding: 13px 22px;
-
-    border: 1px solid rgba(255, 255, 255, 0.3);
-
-    border-radius: 30px;
-
-    background: rgba(255, 255, 255, 0.08);
-
-    color: #ffffff;
-
-    text-decoration: none;
-
-    font-size: 10px;
-
-    font-weight: 600;
-
-    backdrop-filter: blur(8px);
-
-    transition: 0.3s ease;
-}
-
-
-.cta-secondary-btn:hover {
-    background: rgba(255, 255, 255, 0.16);
-
-    border-color: rgba(255, 255, 255, 0.5);
-
-    transform: translateY(-3px);
-}
-
-
-/* =========================================================
-   FLOATING ICONS
-========================================================= */
-
-.cta-floating {
+.cta-glow-mesh {
     position: absolute;
-
-    z-index: 3;
-
-    width: 45px;
-    height: 45px;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 14px;
-
-    background: rgba(255, 255, 255, 0.1);
-
-    border: 1px solid rgba(255, 255, 255, 0.14);
-
-    color: #f3d2bf;
-
-    font-size: 16px;
-
-    backdrop-filter: blur(8px);
-
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(169, 85, 47, 0.4), transparent 70%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    filter: blur(60px);
     pointer-events: none;
 }
 
+/* Floating Badges */
+.cta-floating {
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: #ffd166;
+    pointer-events: none;
+}
 
 .cta-floating-one {
-    top: 90px;
-    left: 13%;
-
-    animation: floatingOne 4s ease-in-out infinite;
+    top: 15%;
+    left: 12%;
+    animation: floatUpDown 6s ease-in-out infinite alternate;
 }
-
 
 .cta-floating-two {
-    right: 13%;
-    top: 110px;
-
-    animation: floatingTwo 5s ease-in-out infinite;
+    bottom: 20%;
+    left: 14%;
+    color: #ff6b6b;
+    animation: floatUpDown 7s ease-in-out infinite alternate-reverse;
 }
-
 
 .cta-floating-three {
-    left: 17%;
-    bottom: 70px;
-
-    animation: floatingThree 4.5s ease-in-out infinite;
+    top: 25%;
+    right: 12%;
+    color: #06d6a0;
+    animation: floatUpDown 5s ease-in-out infinite alternate;
 }
 
-
-/* =========================================================
-   ANIMATIONS
-========================================================= */
-
-@keyframes ctaContentReveal {
-
-    from {
-        opacity: 0;
-
-        transform: translateY(35px);
-    }
-
-    to {
-        opacity: 1;
-
-        transform: translateY(0);
-    }
+/* Main Content */
+.deals-cta-content {
+    max-width: 680px;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
 }
 
-
-@keyframes ctaIconFloat {
-
-    0%,
-    100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-8px);
-    }
+.cta-icon-wrapper {
+    width: 64px;
+    height: 64px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    color: #ffd166;
+    margin-bottom: 18px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
 }
 
-
-@keyframes ctaCircleFloat {
-
-    0%,
-    100% {
-        transform: translate(0, 0);
-    }
-
-    50% {
-        transform: translate(20px, -20px);
-    }
+.cta-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #ffd166;
+    padding: 6px 16px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    margin-bottom: 14px;
 }
 
-
-@keyframes floatingOne {
-
-    0%,
-    100% {
-        transform: translateY(0) rotate(0deg);
-    }
-
-    50% {
-        transform: translateY(-12px) rotate(8deg);
-    }
+.cta-heading {
+    font-size: 44px;
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -1.2px;
+    margin: 0 0 16px;
 }
 
-
-@keyframes floatingTwo {
-
-    0%,
-    100% {
-        transform: translateY(0) rotate(0deg);
-    }
-
-    50% {
-        transform: translateY(12px) rotate(-8deg);
-    }
+.cta-heading span {
+    background: linear-gradient(90deg, #fca5a5, #fed7aa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
-
-@keyframes floatingThree {
-
-    0%,
-    100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-10px);
-    }
+.cta-description {
+    font-size: 15px;
+    color: #d1c8be;
+    line-height: 1.65;
+    margin: 0 0 32px;
+    max-width: 560px;
 }
 
+.cta-description strong {
+    color: #ffd166;
+}
 
-/* =========================================================
-   TABLET
-========================================================= */
+/* Newsletter Form on Desktop */
+.cta-newsletter-wrapper {
+    width: 100%;
+    max-width: 520px;
+    margin-bottom: 30px;
+}
 
-@media (max-width: 900px) {
+.cta-email-form {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(10px);
+    border: 1.5px solid rgba(255, 255, 255, 0.22);
+    border-radius: 999px;
+    padding: 6px 6px 6px 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+    transition: all 0.25s ease;
+}
 
+.cta-email-form:focus-within {
+    border-color: rgba(255, 255, 255, 0.45);
+    background: rgba(255, 255, 255, 0.16);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+}
+
+.cta-input-box {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-grow: 1;
+}
+
+.cta-envelope-icon {
+    color: #e2d7cc;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.cta-input-box input {
+    width: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #ffffff;
+    font-size: 14.5px;
+    line-height: 1.2;
+    padding: 0;
+}
+
+.cta-input-box input::placeholder {
+    color: #b0a498;
+}
+
+.cta-submit-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #a9552f;
+    color: #ffffff;
+    border: none;
+    border-radius: 999px;
+    padding: 12px 22px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.22s ease;
+    white-space: nowrap;
+    box-shadow: 0 4px 16px rgba(169, 85, 47, 0.4);
+}
+
+.cta-submit-btn:hover {
+    background: #8e4424;
+    transform: translateY(-1px);
+}
+
+/* Success Box */
+.cta-success-box {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: rgba(16, 185, 129, 0.2);
+    border: 1.5px solid rgba(16, 185, 129, 0.4);
+    border-radius: 18px;
+    padding: 16px 22px;
+    text-align: left;
+}
+
+.cta-success-icon {
+    width: 38px;
+    height: 38px;
+    background: #10b981;
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    min-width: 38px;
+}
+
+.cta-success-box h4 {
+    margin: 0 0 4px;
+    font-size: 15px;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.cta-success-box p {
+    margin: 0;
+    font-size: 13px;
+    color: #e5e5e5;
+}
+
+.cta-success-box strong {
+    color: #ffd166;
+    letter-spacing: 1px;
+}
+
+/* Secondary Actions */
+.cta-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.cta-primary-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #ffffff;
+    color: #29251f;
+    padding: 12px 24px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.22s ease;
+}
+
+.cta-primary-btn:hover {
+    background: #f4eee7;
+    transform: translateY(-2px);
+}
+
+.cta-secondary-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #d1c8be;
+    padding: 12px 20px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.22s ease;
+}
+
+.cta-secondary-btn:hover {
+    color: #ffffff;
+    border-color: rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+/* Responsive (Mobile & Small Tablets) */
+@media (max-width: 768px) {
     .deals-cta-section {
-        min-height: 400px;
-
-        margin-bottom: 60px;
-
-        padding: 60px 5%;
+        padding: 50px 5% 65px;
     }
 
-
-    .cta-floating-one {
-        left: 7%;
+    .cta-heading {
+        font-size: 30px;
     }
 
-
-    .cta-floating-two {
-        right: 7%;
-    }
-
-}
-
-
-/* =========================================================
-   MOBILE - MAX WIDTH 500px
-========================================================= */
-
-@media (max-width: 500px) {
-
-    .deals-cta-section {
-
-        min-height: 500px;
-
-        margin: 15px 15px 50px;
-
-        width: calc(100% - 30px);
-
-        padding: 55px 20px;
-
-        border-radius: 25px;
-
-        box-sizing: border-box;
-    }
-
-
-    /* Content */
-
-    .deals-cta-content {
-
-        width: 100%;
-    }
-
-
-    /* Icon */
-
-    .cta-icon {
-
-        width: 55px;
-
-        height: 55px;
-
-        margin-bottom: 15px;
-
-        border-radius: 17px;
-
-        font-size: 21px;
-    }
-
-
-    /* Label */
-
-    .cta-label {
-
-        font-size: 8px;
-
-        letter-spacing: 1.5px;
-    }
-
-
-    /* Heading */
-
-    .deals-cta-content h2 {
-
-        margin: 10px 0 15px;
-
-        font-size: 35px;
-
-        line-height: 1.08;
-
-        letter-spacing: -1px;
-    }
-
-
-    /* Description */
-
-    .deals-cta-content > p {
-
-        max-width: 310px;
-
-        margin-bottom: 25px;
-
-        font-size: 10px;
-
-        line-height: 1.8;
-    }
-
-
-    /* Buttons */
-
-    .cta-actions {
-
-        width: 100%;
-
+    .cta-email-form {
         flex-direction: column;
-
-        gap: 10px;
+        background: transparent;
+        border: none;
+        box-shadow: none;
+        padding: 0;
+        gap: 12px;
+        width: 100%;
     }
 
-
-    .cta-primary-btn {
-
+    .cta-input-box {
         width: 100%;
-
-        max-width: 230px;
-
-        justify-content: center;
-
+        background: rgba(255, 255, 255, 0.12);
+        backdrop-filter: blur(10px);
+        border: 1.5px solid rgba(255, 255, 255, 0.25);
+        border-radius: 999px;
         padding: 13px 20px;
-
-        font-size: 10px;
-
         box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        gap: 12px;
     }
 
+    .cta-input-box input {
+        font-size: 14px;
+    }
 
-    .cta-secondary-btn {
-
+    .cta-submit-btn {
         width: 100%;
-
-        max-width: 230px;
-
-        padding: 12px 18px;
-
-        font-size: 9px;
-
-        box-sizing: border-box;
+        justify-content: center;
+        padding: 14px 22px;
+        font-size: 14px;
+        border-radius: 999px;
     }
-
-
-    /* Floating icons */
 
     .cta-floating {
-
-        width: 36px;
-
-        height: 36px;
-
-        border-radius: 11px;
-
-        font-size: 12px;
+        display: none;
     }
-
-
-    .cta-floating-one {
-
-        top: 35px;
-
-        left: 25px;
-    }
-
-
-    .cta-floating-two {
-
-        top: 40px;
-
-        right: 25px;
-    }
-
-
-    .cta-floating-three {
-
-        left: 35px;
-
-        bottom: 35px;
-    }
-
-
-    /* Circles */
-
-    .cta-circle-one {
-
-        width: 300px;
-
-        height: 300px;
-
-        left: -210px;
-
-        top: -200px;
-    }
-
-
-    .cta-circle-two {
-
-        width: 260px;
-
-        height: 260px;
-
-        right: -180px;
-
-        bottom: -190px;
-    }
-
-}
-
-
-/* =========================================================
-   SMALL MOBILE - MAX WIDTH 380px
-========================================================= */
-
-@media (max-width: 380px) {
-
-    .deals-cta-section {
-
-        min-height: 470px;
-
-        margin-left: 12px;
-
-        margin-right: 12px;
-
-        width: calc(100% - 24px);
-
-        padding: 45px 16px;
-
-        border-radius: 22px;
-    }
-
-
-    .cta-icon {
-
-        width: 50px;
-
-        height: 50px;
-
-        font-size: 19px;
-    }
-
-
-    .deals-cta-content h2 {
-
-        font-size: 31px;
-    }
-
-
-    .deals-cta-content > p {
-
-        max-width: 280px;
-
-        font-size: 9px;
-    }
-
-
-    .cta-primary-btn,
-    .cta-secondary-btn {
-
-        max-width: 210px;
-    }
-
-
-    .cta-floating-one {
-
-        left: 15px;
-
-        top: 25px;
-    }
-
-
-    .cta-floating-two {
-
-        right: 15px;
-
-        top: 30px;
-    }
-
 }

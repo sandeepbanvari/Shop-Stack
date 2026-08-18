@@ -1,0 +1,306 @@
+/* =========================================================
+   DEALS SCHEDULE & DROP ROUNDS
+========================================================= */
+
+.deals-schedule-section {
+    width: 100%;
+    padding: 60px 8% 40px;
+    background: #faf8f5;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.schedule-header {
+    text-align: center;
+    max-width: 680px;
+    margin: 0 auto 36px;
+}
+
+.schedule-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(169, 85, 47, 0.1);
+    color: #a9552f;
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    margin-bottom: 12px;
+}
+
+.schedule-badge-icon {
+    font-size: 12px;
+}
+
+.schedule-header h2 {
+    font-size: 32px;
+    font-weight: 800;
+    color: #29251f;
+    letter-spacing: -0.8px;
+    margin: 0 0 10px;
+}
+
+.schedule-header p {
+    font-size: 15px;
+    color: #786f66;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Mobile hint (Hidden on desktop) */
+.schedule-mobile-hint {
+    display: none;
+    margin-top: 12px;
+}
+
+.schedule-mobile-hint span {
+    font-size: 11px;
+    font-weight: 700;
+    color: #a9552f;
+    background: rgba(169, 85, 47, 0.08);
+    padding: 4px 12px;
+    border-radius: 999px;
+    letter-spacing: 0.5px;
+}
+
+/* Grid on Desktop */
+.schedule-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    max-width: 1240px;
+    margin: 0 auto;
+}
+
+/* Card */
+.schedule-card {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 24px 22px;
+    border: 2px solid #eee7de;
+    box-shadow: 0 4px 20px rgba(41, 37, 31, 0.04);
+    transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.schedule-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(169, 85, 47, 0.12);
+    border-color: #d8c2b4;
+}
+
+.schedule-card.is-live {
+    background: linear-gradient(145deg, #ffffff, #fff8f3);
+    border-color: #a9552f;
+    box-shadow: 0 8px 28px rgba(169, 85, 47, 0.16);
+}
+
+.schedule-card.selected {
+    border-color: #a9552f;
+    background: #fff8f3;
+}
+
+/* Top Pill */
+.schedule-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 12px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    width: fit-content;
+    margin-bottom: 14px;
+}
+
+.live-pill {
+    background: #ffebe5;
+    color: #e53e3e;
+}
+
+.live-dot-pulse {
+    width: 8px;
+    height: 8px;
+    background: #e53e3e;
+    border-radius: 50%;
+    box-shadow: 0 0 0 0 rgba(229, 62, 62, 0.7);
+    animation: livePulse 1.6s infinite;
+}
+
+@keyframes livePulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(229, 62, 62, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 8px rgba(229, 62, 62, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(229, 62, 62, 0);
+    }
+}
+
+.upcoming-pill {
+    background: #f1ede8;
+    color: #6b635b;
+}
+
+/* Time */
+.schedule-time {
+    font-size: 24px;
+    font-weight: 800;
+    color: #29251f;
+    letter-spacing: -0.5px;
+    margin-bottom: 6px;
+}
+
+.schedule-discount-badge {
+    display: inline-block;
+    color: #a9552f;
+    font-weight: 700;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.schedule-highlight {
+    font-size: 13px;
+    color: #786f66;
+    line-height: 1.5;
+    margin: 0 0 18px;
+    flex-grow: 1;
+}
+
+/* Footer */
+.schedule-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 14px;
+    border-top: 1px solid #f1ece4;
+    margin-top: auto;
+}
+
+.schedule-tag {
+    font-size: 12px;
+    font-weight: 600;
+    color: #948b81;
+}
+
+.live-status-text {
+    font-size: 12px;
+    font-weight: 700;
+    color: #e53e3e;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.reminder-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 700;
+    border: 1px solid #ded5ca;
+    background: #ffffff;
+    color: #5c534a;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.reminder-btn:hover {
+    border-color: #a9552f;
+    color: #a9552f;
+    background: #fff8f3;
+}
+
+.reminder-btn.active {
+    background: #10b981;
+    color: #ffffff;
+    border-color: #10b981;
+}
+
+/* =========================================================
+   RESPONSIVE & MOBILE HORIZONTAL SCROLL
+========================================================= */
+
+@media (max-width: 1024px) and (min-width: 769px) {
+    .schedule-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+}
+
+/* Mobile & Small Screen: Smooth Horizontal Scroll */
+@media (max-width: 768px) {
+    .deals-schedule-section {
+        padding: 45px 0 35px;
+        overflow: hidden;
+    }
+
+    .schedule-header {
+        padding: 0 20px;
+        margin-bottom: 24px;
+    }
+
+    .schedule-header h2 {
+        font-size: 26px;
+    }
+
+    .schedule-mobile-hint {
+        display: inline-flex;
+    }
+
+    .schedule-grid {
+        display: flex;
+        flex-direction: row;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        padding: 12px 20px 24px;
+        gap: 16px;
+        scroll-padding-left: 20px;
+        scroll-padding-right: 20px;
+        scrollbar-width: thin;
+        scrollbar-color: rgba(169, 85, 47, 0.3) transparent;
+    }
+
+    .schedule-grid::after {
+        content: '';
+        min-width: 8px;
+        flex-shrink: 0;
+    }
+
+    .schedule-grid::-webkit-scrollbar {
+        height: 6px;
+    }
+
+    .schedule-grid::-webkit-scrollbar-track {
+        background: rgba(41, 37, 31, 0.05);
+        border-radius: 999px;
+        margin: 0 20px;
+    }
+
+    .schedule-grid::-webkit-scrollbar-thumb {
+        background: rgba(169, 85, 47, 0.3);
+        border-radius: 999px;
+    }
+
+    .schedule-card {
+        width: calc(85vw - 32px);
+        min-width: 260px;
+        max-width: 300px;
+        flex-shrink: 0;
+        scroll-snap-align: start;
+        margin: 0 2px;
+    }
+}
