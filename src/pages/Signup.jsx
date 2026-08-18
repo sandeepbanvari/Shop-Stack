@@ -37,21 +37,33 @@ export const Signup = () => {
     const { name, email, mobile, password } = form;
     const { errName, errEmail, errMobile, errPassword } = pattern;
 
-    if (!name || !email || !mobile || !password) {
-      return setErr("Please fill in all fields.");
+    if (!name && !email && !mobile && !password) {
+      return setErr("Please fill in all fields to register.");
+    }
+    if (!name) {
+      return setErr("Please enter your full name.");
+    }
+    if (!email) {
+      return setErr("Please enter your email address.");
+    }
+    if (!mobile) {
+      return setErr("Please enter your mobile number.");
+    }
+    if (!password) {
+      return setErr("Please enter a password.");
     }
     if (!errName.test(name)) {
-      return setErr("Name must start with a capital letter (e.g. John).");
+      return setErr("Name must start with a capital letter (e.g., John Doe).");
     }
     if (!errEmail.test(email)) {
-      return setErr("Please enter a valid email address.");
+      return setErr("Please enter a valid email address (e.g., john@example.com).");
     }
     if (!errMobile.test(mobile)) {
-      return setErr("Please enter a valid 10-digit mobile number.");
+      return setErr("Please enter a valid 10-digit mobile number starting with 6-9.");
     }
     if (!errPassword.test(password)) {
       return setErr(
-        "Password must contain 8+ characters, uppercase, lowercase, number and special character."
+        "Password must be 8+ chars with uppercase, lowercase, number & special character."
       );
     }
 
@@ -67,6 +79,13 @@ export const Signup = () => {
 
   return (
     <div className="signup-page">
+      {/* Floating Top-Right Alert */}
+      {err && (
+        <div className={`auth-alert ${isSuccess ? "success" : ""}`}>
+          {err}
+        </div>
+      )}
+
       {/* Left Column: Visual Banner */}
       <div className="signup-banner">
         <div className="banner-overlay"></div>
@@ -156,13 +175,6 @@ export const Signup = () => {
                 I agree to the <span>Terms & Conditions</span> and <span>Privacy Policy</span>
               </label>
             </div>
-
-            {/* Error / Success Alert */}
-            {err && (
-              <div className={`auth-alert ${isSuccess ? "success" : ""}`}>
-                {err}
-              </div>
-            )}
 
             {/* Submit Button */}
             <button

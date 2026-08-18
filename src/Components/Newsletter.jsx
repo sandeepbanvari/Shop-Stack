@@ -36,9 +36,7 @@ export const Newsletter = () => {
 
 
         <h2>
-          Get <span>Exclusive Deals</span>
-          <br />
-          Before Anyone Else
+          Get <span>Exclusive Deals</span> Before Anyone Else
         </h2>
 
 
@@ -49,30 +47,33 @@ export const Newsletter = () => {
         </p>
 
 
-        <div className="newsletter-form">
+        <form className="newsletter-form" onSubmit={(e) => e.preventDefault()}>
 
-          <input
-            type="email"
-            placeholder="Enter your email address"
-          />
+          <div className="newsletter-input-wrapper">
+            <input
+              type="email"
+              placeholder="Enter your email address"
+              required
+              aria-label="Enter your email address"
+            />
+          </div>
 
           <motion.button
+            type="submit"
             whileHover={{
-              scale: 1.03,
+              scale: 1.02,
             }}
-
             whileTap={{
-              scale: 0.97,
+              scale: 0.98,
             }}
           >
             <FaPaperPlane />
-
             <span>
               Subscribe
             </span>
           </motion.button>
 
-        </div>
+        </form>
 
       </motion.div>
 

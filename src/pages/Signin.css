@@ -265,23 +265,83 @@
 }
 
 /* =========================================================
-   ALERT
+   FLOATING TOAST ALERT (TOP RIGHT CORNER)
 ========================================================= */
 
 .auth-alert {
-    padding: 8px 12px;
-    border-radius: 8px;
-    border: 1px solid #efcaca;
-    background: #fff5f5;
-    color: #b42318;
-    font-size: 11.5px;
+    position: fixed;
+    top: 24px;
+    right: 24px;
+    z-index: 99999;
+    max-width: 360px;
+    width: auto;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 13px 18px;
+    border-radius: 12px;
+    border: 1px solid rgba(214, 60, 60, 0.18);
+    border-left: 5px solid #d63c3c;
+    background: #ffffff;
+    color: #29251f;
+
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.4;
+    text-align: left;
+
+    box-shadow:
+        0 14px 38px rgba(0, 0, 0, 0.16),
+        0 4px 12px rgba(0, 0, 0, 0.08);
+
+    animation: alertToastSlide 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.auth-alert::before {
+    content: "✕";
+    font-size: 11px;
+    font-weight: 800;
+    flex-shrink: 0;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: rgba(214, 60, 60, 0.12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
+    line-height: 22px;
+    color: #d63c3c;
 }
 
 .auth-alert.success {
-    border-color: #c8dfcf;
-    background: #f2faf4;
-    color: #26733d;
+    border-color: rgba(46, 158, 88, 0.2);
+    border-left-color: #2e9e58;
+    background: #ffffff;
+    color: #1a1714;
+    box-shadow:
+        0 14px 38px rgba(0, 0, 0, 0.16),
+        0 4px 12px rgba(46, 158, 88, 0.12);
+}
+
+.auth-alert.success::before {
+    content: "✓";
+    font-size: 12px;
+    background: rgba(46, 158, 88, 0.12);
+    color: #2e9e58;
+}
+
+@keyframes alertToastSlide {
+    from {
+        opacity: 0;
+        transform: translateY(-20px) translateX(20px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) translateX(0) scale(1);
+    }
 }
 
 /* =========================================================
@@ -430,9 +490,23 @@
     }
 
     .auth-alert {
-        padding: 6px 10px;
-        font-size: 11px;
-        border-radius: 7px;
+        top: 14px;
+        right: 12px;
+        left: auto;
+        max-width: 270px;
+        width: auto;
+        padding: 9px 12px;
+        font-size: 11.5px;
+        border-radius: 10px;
+        gap: 8px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.14);
+    }
+
+    .auth-alert::before {
+        width: 18px;
+        height: 18px;
+        font-size: 9.5px;
+        line-height: 18px;
     }
 
     .signin-btn {

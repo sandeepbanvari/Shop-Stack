@@ -338,7 +338,9 @@
 
 .products-grid > div {
     min-width: 0;
-
+    height: 100%;
+    display: flex;
+    flex-direction: column;
     will-change: transform, opacity;
 }
 
@@ -514,67 +516,70 @@
 
 
 /* =========================================================
-   MOBILE
+   MOBILE (2 Cards Per Row)
 ========================================================= */
 
 @media (max-width: 600px) {
 
     .featured {
-        padding: 40px 16px 60px;
+        padding: 35px 12px 60px;
     }
 
     .products-page-header {
-        margin-bottom: 28px;
+        margin-bottom: 24px;
     }
 
     .products-main-title {
-        font-size: 28px;
-        letter-spacing: -0.8px;
+        font-size: 26px;
+        letter-spacing: -0.6px;
     }
 
     .products-main-subtitle {
-        font-size: 13.5px;
-        margin-bottom: 18px;
+        font-size: 13px;
+        margin-bottom: 16px;
     }
 
     .products-highlights-row {
-        gap: 8px;
+        gap: 6px;
     }
 
     .product-highlight-chip {
-        font-size: 11px;
-        padding: 5px 12px;
+        font-size: 10.5px;
+        padding: 4px 10px;
     }
 
     .products-filter-container {
-        margin-bottom: 30px;
-        gap: 12px;
+        margin-bottom: 24px;
+        gap: 10px;
     }
 
 
     .filter-search-input,
     .filter-category-select {
-        height: 50px;
+        height: 46px;
+        font-size: 14px;
     }
 
 
     .products-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
 
-        gap: 20px;
+        gap: 12px;
     }
 
 
     .pagination-container {
-        margin-top: 40px;
+        margin-top: 35px;
 
         flex-wrap: wrap;
     }
 
 
     .pagination-btn {
-        width: 40px;
-        height: 40px;
+        width: 36px;
+        height: 36px;
+        font-size: 13px;
     }
 
 }
@@ -587,14 +592,18 @@
 @media (max-width: 400px) {
 
     .featured {
-        padding-left: 15px;
-        padding-right: 15px;
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+
+    .products-grid {
+        gap: 8px;
     }
 
 
     .filter-search-input,
     .filter-category-select {
-        font-size: 14px;
+        font-size: 13px;
     }
 
 }

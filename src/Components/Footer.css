@@ -366,35 +366,119 @@
 @media (max-width: 650px) {
 
     .footer-top {
-        padding: 55px 25px 45px;
+        padding: 45px 16px 35px;
     }
 
 
     .footer-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
 
-        gap: 38px;
+        gap: 30px 16px;
     }
 
 
     .footer-brand {
+        grid-column: 1 / -1;
+
         max-width: 100%;
     }
 
 
     .footer-tagline {
         max-width: 100%;
+
+        font-size: 13.5px;
+
+        line-height: 1.6;
+
+        margin: 14px 0 18px;
+    }
+
+
+    .footer-socials {
+        gap: 8px;
+    }
+
+
+    .social-btn {
+        width: 36px;
+        height: 36px;
+        font-size: 13px;
+    }
+
+
+    .footer-col {
+        min-width: 0;
+    }
+
+
+    .footer-col:last-child {
+        grid-column: 1 / -1;
+    }
+
+
+    .footer-col-title {
+        font-size: 14px;
+
+        margin: 0 0 14px;
+    }
+
+
+    .footer-links li {
+        margin-bottom: 10px;
+    }
+
+
+    .footer-links a {
+        font-size: 13.5px;
+
+        display: inline-block;
+
+        padding: 2px 0;
+    }
+
+
+    .footer-contact-list li {
+        gap: 12px;
+
+        margin-bottom: 15px;
+    }
+
+
+    .contact-icon-wrapper {
+        width: 34px;
+        height: 34px;
+        font-size: 12px;
+    }
+
+
+    .contact-label {
+        font-size: 11.5px;
+    }
+
+
+    .contact-value {
+        font-size: 12.5px;
+
+        word-break: break-word;
     }
 
 
     .footer-bottom {
-        padding: 22px 25px;
+        padding: 20px 16px;
 
         flex-direction: column;
 
         align-items: center;
 
         text-align: center;
+
+        gap: 12px;
+    }
+
+
+    .copyright-text {
+        font-size: 12.5px;
     }
 
 
@@ -403,7 +487,12 @@
 
         justify-content: center;
 
-        gap: 12px 20px;
+        gap: 10px 18px;
+    }
+
+
+    .footer-bottom-links a {
+        font-size: 12px;
     }
 
 }
@@ -416,14 +505,19 @@
 @media (max-width: 400px) {
 
     .footer-top {
-        padding-left: 20px;
-        padding-right: 20px;
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+
+    .footer-grid {
+        gap: 25px 12px;
     }
 
 
     .footer-bottom {
-        padding-left: 20px;
-        padding-right: 20px;
+        padding-left: 12px;
+        padding-right: 12px;
     }
 
 
@@ -433,7 +527,7 @@
 
 
     .footer-bottom-links {
-        gap: 10px 15px;
+        gap: 8px 14px;
     }
 
 }

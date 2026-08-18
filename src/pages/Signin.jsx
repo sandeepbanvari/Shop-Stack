@@ -26,23 +26,29 @@ export const Signin = () => {
 
     const { email, password } = form;
 
-    if (!email || !password) {
-      return setErr("Please fill in all fields.");
+    if (!email && !password) {
+      return setErr("Please enter your email and password.");
+    }
+    if (!email) {
+      return setErr("Please enter your email address.");
+    }
+    if (!password) {
+      return setErr("Please enter your password.");
     }
 
     const storedUser = localStorage.getItem("users");
 
     if (!storedUser) {
-      return setErr("User not found. Please sign up first.");
+      return setErr("No account found. Please sign up first.");
     }
 
     const user = JSON.parse(storedUser);
 
     if (email !== user.email) {
-      return setErr("Invalid email address.");
+      return setErr("Invalid email. Account does not exist.");
     }
     if (password !== user.password) {
-      return setErr("Invalid password.");
+      return setErr("Incorrect password. Please try again.");
     }
 
     setIsSuccess(true);
@@ -57,6 +63,13 @@ export const Signin = () => {
 
   return (
     <div className="signin-page">
+      {/* Floating Top-Right Alert */}
+      {err && (
+        <div className={`auth-alert ${isSuccess ? "success" : ""}`}>
+          {err}
+        </div>
+      )}
+
       {/* Left Column: Visual Banner */}
       <div className="signin-banner">
         <div className="banner-overlay"></div>
@@ -120,13 +133,6 @@ export const Signin = () => {
                 Forgot Password?
               </Link>
             </div>
-
-            {/* Error / Success Alert */}
-            {err && (
-              <div className={`auth-alert ${isSuccess ? "success" : ""}`}>
-                {err}
-              </div>
-            )}
 
             {/* Submit Button */}
             <button type="submit" className="signin-btn">
