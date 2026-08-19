@@ -4,12 +4,12 @@ import "./Header.css";
 export const Header = () => {
   const navLinks = [
     { path: "/", name: "Home", mobileName: "Home", icon: "fa-solid fa-house" },
-    { path: "/about", name: "About", mobileName: "About", icon: "fa-solid fa-circle-info" },
     { path: "/products", name: "Products", mobileName: "Products", icon: "fa-solid fa-bag-shopping" },
     // { path: "/categories", name: "Categories", mobileName: "Categories", icon: "fa-solid fa-layer-group" },
     // { path: "/deals", name: "Deals", mobileName: "Deals", icon: "fa-solid fa-fire" },
     { path: "/deals", name: "Deals", mobileName: "Deals", icon: "fa-solid fa-fire" },
     // { path: "/userdata", name: "UserData", mobileName: "UserData", icon: "fa-solid fa-user-gear" },
+    { path: "/about", name: "About", mobileName: "About", icon: "fa-solid fa-circle-info" },
     { path: "/userlist", name: "UserList", mobileName: "Users", icon: "fa-solid fa-users" },
   ];
 
