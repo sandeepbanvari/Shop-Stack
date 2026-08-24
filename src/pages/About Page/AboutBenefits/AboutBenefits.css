@@ -1,0 +1,255 @@
+/* =========================================================
+   ABOUTBENEFITS — BENEFITS SECTION STYLES
+========================================================= */
+
+.about-benefits {
+    padding: 110px 0;
+
+    background: #ffffff;
+}
+
+
+.benefits-grid {
+    display: grid;
+
+    grid-template-columns: 0.75fr 1.25fr;
+
+    gap: 90px;
+
+    align-items: start;
+}
+
+
+.benefits-intro {
+    position: sticky;
+
+    top: 100px;
+}
+
+
+.benefits-intro > span {
+    display: block;
+
+    margin-bottom: 18px;
+
+    color: #a9552f;
+
+    font-size: 11px;
+    font-weight: 750;
+
+    letter-spacing: 1.8px;
+}
+
+
+.benefits-intro h2 {
+    margin: 0;
+
+    color: #29251f;
+
+    font-size: clamp(34px, 4vw, 50px);
+
+    line-height: 1.08;
+
+    letter-spacing: -2px;
+}
+
+
+.benefits-intro em {
+    color: #a9552f;
+
+    font-family: Georgia, serif;
+
+    font-style: italic;
+
+    font-weight: 500;
+}
+
+
+.benefits-intro > p {
+    max-width: 400px;
+
+    margin: 22px 0;
+
+    color: #81786f;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+}
+
+
+.text-link {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    color: #a9552f;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    font-weight: 700;
+}
+
+
+.text-link:hover i {
+    transform: translateX(4px);
+}
+
+
+.text-link i {
+    transition: transform 0.25s ease;
+}
+
+
+/* Benefit Rows */
+
+.benefits-list {
+    border-top: 1px solid #e5ded7;
+}
+
+
+.benefit-row {
+    min-height: 115px;
+
+    display: grid;
+
+    grid-template-columns: 45px 50px 1fr 20px;
+
+    align-items: center;
+
+    gap: 18px;
+
+    border-bottom: 1px solid #e5ded7;
+
+    transition: padding 0.3s ease;
+}
+
+
+.benefit-row:hover {
+    padding-left: 10px;
+}
+
+
+.benefit-number {
+    color: #b5aca4;
+
+    font-size: 11px;
+
+    font-weight: 700;
+}
+
+
+.benefit-icon {
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 11px;
+
+    background: #f5eee8;
+
+    color: #a9552f;
+}
+
+
+.benefit-content h3 {
+    margin: 0 0 5px;
+
+    color: #29251f;
+
+    font-size: 15px;
+}
+
+
+.benefit-content p {
+    margin: 0;
+
+    color: #81786f;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+}
+
+
+.benefit-arrow {
+    color: #b4aaa1;
+
+    font-size: 11px;
+}
+
+
+/* Responsive */
+
+@media (max-width: 900px) {
+
+    .benefits-grid {
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+    }
+
+
+    .benefits-intro {
+        position: static;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .about-benefits {
+        padding: 75px 0;
+    }
+
+
+    .benefits-intro h2 {
+        font-size: 36px;
+
+        letter-spacing: -1.5px;
+    }
+
+
+    .benefit-row {
+        grid-template-columns:
+            30px 42px 1fr;
+
+        gap: 10px;
+
+        padding: 18px 0;
+    }
+
+
+    .benefit-arrow {
+        display: none;
+    }
+
+
+    .benefit-content h3 {
+        font-size: 14px;
+    }
+
+
+    .benefit-content p {
+        font-size: 11px;
+    }
+
+}
+
+
+@media (max-width: 400px) {
+
+    .benefits-intro h2 {
+        font-size: 31px;
+    }
+
+}

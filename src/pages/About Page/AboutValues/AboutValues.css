@@ -1,0 +1,189 @@
+/* =========================================================
+   ABOUTVALUES — VALUES SECTION STYLES
+========================================================= */
+
+.about-values {
+    padding: 110px 0;
+
+    background: #f7f3ee;
+}
+
+
+.section-heading {
+    max-width: 650px;
+
+    margin-bottom: 60px;
+}
+
+
+.section-heading > span {
+    display: block;
+
+    margin-bottom: 18px;
+
+    color: #a9552f;
+
+    font-size: 11px;
+    font-weight: 750;
+
+    letter-spacing: 1.8px;
+}
+
+
+.section-heading h2 {
+    margin: 0;
+
+    color: #29251f;
+
+    font-size: clamp(34px, 4vw, 50px);
+
+    line-height: 1.08;
+
+    letter-spacing: -2px;
+}
+
+
+.section-heading em {
+    color: #a9552f;
+
+    font-family: Georgia, serif;
+
+    font-style: italic;
+
+    font-weight: 500;
+}
+
+
+.section-heading p {
+    max-width: 550px;
+
+    margin: 18px 0 0;
+
+    color: #81786f;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+}
+
+
+.values-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 0;
+}
+
+
+.value-item {
+    padding: 15px 45px 15px 0;
+
+    border-right: 1px solid #ddd2c8;
+}
+
+
+.value-item:not(:first-child) {
+    padding-left: 45px;
+}
+
+
+.value-item:last-child {
+    border-right: none;
+}
+
+
+.value-icon {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 24px;
+
+    border-radius: 12px;
+
+    background: #29251f;
+
+    color: #ffffff;
+
+    font-size: 16px;
+}
+
+
+.value-item h3 {
+    margin: 0 0 10px;
+
+    color: #29251f;
+
+    font-size: 18px;
+}
+
+
+.value-item p {
+    margin: 0;
+
+    color: #81786f;
+
+    font-size: 13px;
+
+    line-height: 1.75;
+}
+
+
+/* Responsive */
+
+@media (max-width: 900px) {
+
+    .values-grid {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+    }
+
+
+    .value-item {
+        padding: 0 0 30px !important;
+
+        border-right: none;
+
+        border-bottom: 1px solid #ddd2c8;
+    }
+
+
+    .value-item:last-child {
+        padding-bottom: 0 !important;
+
+        border-bottom: none;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .about-values {
+        padding: 75px 0;
+    }
+
+
+    .section-heading h2 {
+        font-size: 36px;
+
+        letter-spacing: -1.5px;
+    }
+
+}
+
+
+@media (max-width: 400px) {
+
+    .section-heading h2 {
+        font-size: 31px;
+    }
+
+}

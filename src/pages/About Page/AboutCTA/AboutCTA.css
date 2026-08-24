@@ -1,0 +1,136 @@
+/* =========================================================
+   ABOUTCTA — FINAL CTA SECTION STYLES
+========================================================= */
+
+.about-final {
+    padding: 110px 0;
+
+    background: #faf9f7;
+}
+
+
+.final-content {
+    max-width: 850px;
+
+    margin: auto;
+
+    text-align: center;
+}
+
+
+.final-icon {
+    width: 55px;
+    height: 55px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 25px;
+
+    border-radius: 15px;
+
+    background: #f0e2d7;
+
+    color: #a9552f;
+
+    font-size: 20px;
+}
+
+
+.final-content h2 {
+    margin: 0;
+
+    font-size: clamp(38px, 5vw, 60px);
+
+    line-height: 1.05;
+
+    letter-spacing: -2.5px;
+}
+
+
+.final-content h2 span {
+    color: #a9552f;
+
+    font-family: Georgia, serif;
+
+    font-style: italic;
+
+    font-weight: 500;
+}
+
+
+.final-content p {
+    max-width: 520px;
+
+    margin: 20px auto 28px;
+
+    color: #81786f;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+}
+
+
+.final-button {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 15px 25px;
+
+    border-radius: 10px;
+
+    background: #29251f;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    font-weight: 650;
+
+    transition: 0.3s ease;
+}
+
+
+.final-button:hover {
+    background: #a9552f;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 25px rgba(169, 85, 47, 0.18);
+}
+
+
+/* Responsive */
+
+@media (max-width: 600px) {
+
+    .about-final {
+        padding: 75px 0;
+    }
+
+
+    .final-content h2 {
+        font-size: 38px;
+
+        letter-spacing: -1.5px;
+    }
+
+}
+
+
+@media (max-width: 400px) {
+
+    .final-content h2 {
+        font-size: 33px;
+    }
+
+}

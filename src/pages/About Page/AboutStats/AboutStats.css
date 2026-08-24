@@ -1,0 +1,161 @@
+/* =========================================================
+   ABOUTSTATS — STATS SECTION STYLES
+========================================================= */
+
+.about-stats {
+    padding: 100px 0;
+
+    background: #29251f;
+
+    color: #ffffff;
+}
+
+
+.stats-header {
+    text-align: center;
+
+    margin-bottom: 55px;
+}
+
+
+.stats-header > span {
+    display: block;
+
+    margin-bottom: 18px;
+
+    color: #d99570;
+
+    font-size: 11px;
+    font-weight: 750;
+
+    letter-spacing: 1.8px;
+}
+
+
+.stats-header h2 {
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size: clamp(34px, 4vw, 50px);
+
+    line-height: 1.08;
+
+    letter-spacing: -2px;
+}
+
+
+.stats-header h2 em {
+    color: #d99570;
+
+    font-family: Georgia, serif;
+
+    font-style: italic;
+
+    font-weight: 500;
+}
+
+
+.stats-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    border-top: 1px solid #4b4540;
+
+    border-bottom: 1px solid #4b4540;
+}
+
+
+.stat-item {
+    padding: 35px 20px;
+
+    text-align: center;
+
+    border-right: 1px solid #4b4540;
+}
+
+
+.stat-item:last-child {
+    border-right: none;
+}
+
+
+.stat-item strong {
+    display: block;
+
+    color: #ffffff;
+
+    font-size: 42px;
+
+    letter-spacing: -2px;
+}
+
+
+.stat-item span {
+    display: block;
+
+    margin-top: 8px;
+
+    color: #aaa29b;
+
+    font-size: 12px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+}
+
+
+/* Responsive */
+
+@media (max-width: 600px) {
+
+    .stats-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .stat-item:nth-child(2) {
+        border-right: none;
+    }
+
+
+    .stat-item:nth-child(-n + 2) {
+        border-bottom: 1px solid #4b4540;
+    }
+
+
+    .stat-item strong {
+        font-size: 32px;
+    }
+
+
+    .stats-header h2 {
+        font-size: 36px;
+
+        letter-spacing: -1.5px;
+    }
+
+}
+
+
+@media (max-width: 400px) {
+
+    .stats-header h2 {
+        font-size: 31px;
+    }
+
+
+    .stat-item strong {
+        font-size: 28px;
+    }
+
+
+    .stat-item span {
+        font-size: 10px;
+    }
+
+}

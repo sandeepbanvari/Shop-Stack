@@ -16,7 +16,7 @@ import { DealsPage } from "../pages/Deals Page/DealsPage"
 
 
 let Home  = React.lazy(() => import('../pages/Home' ))
-let About = React.lazy(() => import('../pages/About'))
+let About = React.lazy(() => import('../pages/About Page/About'))
 
 
 export const AppRoutes = () => {
