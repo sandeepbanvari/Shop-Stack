@@ -10,12 +10,12 @@ import { Signup } from "../pages/Signup"
 import { UserData } from "../pages/UserData"
 import { UserList } from "../pages/UserList"
 import React, { Suspense } from "react"
-import { Cart } from "../pages/Cart"
+import { Cart } from "../pages/Cart Page/Cart"
 import Loader from "../Components/Loader"
 import { DealsPage } from "../pages/Deals Page/DealsPage"
 
 
-let Home  = React.lazy(() => import('../pages/Home' ))
+let Home  = React.lazy(() => import('../pages/Home Page/Home' ))
 let About = React.lazy(() => import('../pages/About Page/About'))
 
 

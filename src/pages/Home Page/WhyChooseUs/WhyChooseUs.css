@@ -1,0 +1,259 @@
+/* =========================================================
+   WHY CHOOSE US
+========================================================= */
+
+.why-choose-us {
+    width: 100%;
+
+    padding: 90px 6%;
+
+    background: #ffffff;
+
+    color: #29251f;
+}
+
+
+/* =========================================================
+   SECTION TITLE
+========================================================= */
+
+.why-choose-us .section-title {
+    width: 100%;
+    max-width: 1250px;
+
+    margin: 0 auto 55px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+}
+
+
+.why-choose-us .section-label {
+    margin-bottom: 10px;
+
+    color: #a9552f;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.8px;
+
+    text-transform: uppercase;
+}
+
+
+.why-choose-us .section-title h2 {
+    margin: 0;
+
+    color: #29251f;
+
+    font-size: 38px;
+
+    font-weight: 700;
+
+    letter-spacing: -1px;
+
+    text-align: center;
+}
+
+
+.why-choose-us .section-title p {
+    margin: 10px 0 0;
+
+    color: #81786f;
+
+    font-size: 16px;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   FEATURES GRID
+========================================================= */
+
+.features {
+    width: 100%;
+
+    max-width: 1250px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 22px;
+}
+
+
+/* =========================================================
+   FEATURE CARD
+========================================================= */
+
+.feature-card {
+    position: relative;
+
+    padding: 35px 25px;
+
+    background: #faf9f7;
+
+    border: 1px solid #ebe5de;
+
+    border-radius: 16px;
+
+    text-align: center;
+
+    cursor: default;
+
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease;
+}
+
+
+.feature-card:hover {
+    background: #ffffff;
+
+    border-color: #dccfc4;
+
+    box-shadow:
+        0 15px 35px rgba(45, 42, 38, 0.08);
+}
+
+
+/* =========================================================
+   ICON
+========================================================= */
+
+.feature-icon {
+    width: 58px;
+    height: 58px;
+
+    margin: 0 auto 20px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #f3e8df;
+
+    color: #a9552f;
+
+    font-size: 22px;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+.feature-card:hover .feature-icon {
+    background: #a9552f;
+
+    color: #ffffff;
+
+    transform: scale(1.08);
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.feature-card h3 {
+    margin: 0;
+
+    color: #29251f;
+
+    font-size: 18px;
+
+    font-weight: 650;
+
+    letter-spacing: -0.2px;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.feature-card p {
+    margin: 10px auto 0;
+
+    max-width: 230px;
+
+    color: #81786f;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .features {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .why-choose-us {
+        padding: 65px 20px;
+    }
+
+
+    .why-choose-us .section-title {
+        margin-bottom: 40px;
+    }
+
+
+    .why-choose-us .section-title h2 {
+        font-size: 30px;
+    }
+
+
+    .why-choose-us .section-title p {
+        font-size: 14px;
+    }
+
+
+    .features {
+        grid-template-columns: 1fr;
+
+        gap: 16px;
+    }
+
+
+    .feature-card {
+        padding: 30px 20px;
+    }
+
+}

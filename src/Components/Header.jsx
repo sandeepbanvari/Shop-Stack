@@ -1,5 +1,6 @@
 import { Link, NavLink } from "react-router-dom";
 import "./Header.css";
+import { useSelector } from "react-redux";
 
 export const Header = () => {
   const navLinks = [
@@ -12,6 +13,13 @@ export const Header = () => {
     { path: "/about", name: "About", mobileName: "About", icon: "fa-solid fa-circle-info" },
     { path: "/userlist", name: "UserList", mobileName: "Users", icon: "fa-solid fa-users" },
   ];
+
+
+  let cart = useSelector((state) => state.cart);
+const cartCount = cart.reduce(
+    (total, item) => total + (item.quantity || 0),
+    0
+);
 
   return (
     <>
@@ -53,14 +61,18 @@ export const Header = () => {
             <Link to="/products" className="action-icon-btn" title="Products">
               <i className="fa-solid fa-magnifying-glass"></i>
             </Link>
-            
+
             <Link to="/wishlist" className="action-icon-btn" title="Wishlist">
               <i className="fa-regular fa-heart"></i>
             </Link>
 
             <Link to="/cart" className="action-icon-btn" title="Shopping Cart">
               <i className="fa-solid fa-cart-shopping"></i>
-              <span className="cart-badge">0</span>
+              {cartCount > 0 && (
+                <span className="cart-badge">
+                  {cartCount}
+                </span>
+              )}
             </Link>
 
             <Link to="/signup" className="action-icon-btn" title="Account">

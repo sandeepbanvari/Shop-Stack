@@ -1,0 +1,298 @@
+/* =========================================================
+   FEATURED PRODUCTS
+========================================================= */
+
+.featured {
+    width: 100%;
+
+    padding: 90px 6%;
+
+    background: #faf9f7;
+
+    color: #29251f;
+}
+
+
+/* =========================================================
+   SECTION TITLE
+========================================================= */
+
+.section-title {
+    max-width: 1250px;
+    margin: 0 auto 45px;
+    text-align: center;
+}
+
+
+.section-label {
+    display: block;
+    margin-bottom: 10px;
+    color: #a9552f;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+
+.section-title h2 {
+    margin: 0;
+    color: #29251f;
+    font-size: 38px;
+    font-weight: 700;
+    letter-spacing: -1px;
+}
+
+
+.section-title p {
+    margin: 10px 0 0;
+    color: #81786f;
+    font-size: 16px;
+}
+
+
+/* =========================================================
+   PRODUCTS GRID
+========================================================= */
+
+.featured .products-grid {
+    width: 100%;
+
+    max-width: 1250px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 28px;
+}
+
+
+/* =========================================================
+   FRAMER MOTION WRAPPER
+========================================================= */
+
+.featured .products-grid > div {
+    min-width: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* =========================================================
+   VIEW ALL CARD
+========================================================= */
+
+.view-all-card {
+    height: 100%;
+    min-height: 100%;
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 30px;
+
+    border: 1px dashed #d8cec4;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(145deg,
+            #fffdf9,
+            #f7f3ed);
+
+    cursor: pointer;
+
+    transition:
+        border-color 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.view-all-card:hover {
+    border-color: #b76e45;
+
+    background: #fffaf5;
+
+    box-shadow:
+        0 18px 40px rgba(45, 42, 38, 0.08);
+}
+
+
+.view-all-content {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+}
+
+
+.view-all-icon {
+    width: 58px;
+    height: 58px;
+
+    margin-bottom: 20px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #29251f;
+
+    color: #ffffff;
+
+    font-size: 19px;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease;
+}
+
+
+.view-all-card:hover .view-all-icon {
+    background: #a9552f;
+
+    transform: translateX(5px);
+}
+
+
+.view-all-content > span {
+    margin-bottom: 8px;
+
+    color: #a9552f;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+}
+
+
+.view-all-content h3 {
+    margin: 0;
+
+    color: #29251f;
+
+    font-size: 21px;
+
+    font-weight: 700;
+}
+
+
+.view-all-content p {
+    margin: 8px 0 0;
+
+    color: #81786f;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .featured .products-grid {
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+    }
+
+}
+
+
+/* =========================================================
+   SMALL TABLET
+========================================================= */
+
+@media (max-width: 850px) {
+
+    .featured {
+        padding: 70px 5%;
+    }
+
+
+    .featured .products-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 22px;
+    }
+
+
+    .section-title h2 {
+        font-size: 34px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .featured {
+        padding: 45px 12px;
+    }
+
+
+    .section-title {
+        margin-bottom: 25px;
+    }
+
+
+    .section-title h2 {
+        font-size: 26px;
+    }
+
+
+    .section-title p {
+        font-size: 13px;
+    }
+
+
+    .featured .products-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 12px;
+    }
+
+
+    .view-all-card {
+        min-height: auto;
+        padding: 16px 10px;
+        border-radius: 14px;
+    }
+
+}
+
+
+@media (max-width: 400px) {
+
+    .featured {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+
+    .featured .products-grid {
+        gap: 8px;
+    }
+
+}

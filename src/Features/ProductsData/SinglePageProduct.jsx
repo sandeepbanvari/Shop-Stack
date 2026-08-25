@@ -4,14 +4,14 @@ import { useParams, useNavigate } from "react-router-dom";
 import { Header } from "../../Components/Header";
 import { Footer } from "../../Components/Footer";
 import "./SinglePageProduct.css";
+import { useDispatch } from "react-redux";
+import { ADD, INC } from "../Cart Functions/CartSlice";
 
 export const SinglePageProduct = () => {
     let { id } = useParams();
     let navigate = useNavigate();
-
+    let dispatch = useDispatch();
     let [product, setProduct] = useState(null);
-    let [quantity, setQuantity] = useState(1);
-    let [cartMsg, setCartMsg] = useState("");
 
     useEffect(() => {
         async function getProducts() {
@@ -25,23 +25,6 @@ export const SinglePageProduct = () => {
         }
         getProducts();
     }, [id]);
-
-    const handleAddToCart = () => {
-        setCartMsg("Added to cart!");
-        setTimeout(() => setCartMsg(""), 2500);
-    };
-
-    const renderStars = (rating) => {
-        const full = Math.floor(rating || 0);
-        const half = (rating % 1) >= 0.5;
-        return (
-            <span className="stars">
-                {"★".repeat(full)}
-                {half ? "½" : ""}
-                {"☆".repeat(Math.max(0, 5 - full - (half ? 1 : 0)))}
-            </span>
-        );
-    };
 
     if (!product) {
         return (
@@ -64,10 +47,6 @@ export const SinglePageProduct = () => {
             </>
         );
     }
-
-    const discountedPrice = product.discountPercentage 
-        ? (product.price * (1 - product.discountPercentage / 100)).toFixed(2)
-        : product.price;
 
     return (
         <>
@@ -100,17 +79,16 @@ export const SinglePageProduct = () => {
                         {product.category && (
                             <span className="spd-category-tag">{product.category}</span>
                         )}
-                        
+
                         {product.brand && (
                             <p className="spd-brand">{product.brand}</p>
                         )}
-                        
+
                         <h1 className="spd-title">{product.title}</h1>
 
                         {/* Rating Row */}
                         <div className="spd-rating-row">
-                            {renderStars(product.rating)}
-                            <span className="spd-rating-num">{product.rating}</span>
+                            <span className="spd-rating-num">Rating: {product.rating}</span>
                             <span className="spd-reviews-count">
                                 ({product.reviews ? product.reviews.length : 0} reviews)
                             </span>
@@ -122,10 +100,7 @@ export const SinglePageProduct = () => {
 
                         {/* Price Row */}
                         <div className="spd-price-row">
-                            <span className="spd-price">${discountedPrice}</span>
-                            {product.discountPercentage > 0 && (
-                                <span className="spd-original-price">${product.price}</span>
-                            )}
+                            <span className="spd-price">${product.price}</span>
                         </div>
 
                         {/* Stock */}
@@ -139,22 +114,21 @@ export const SinglePageProduct = () => {
                         <div className="spd-qty-row">
                             <span className="spd-qty-label">Qty:</span>
                             <div className="spd-qty-control">
-                                <button onClick={() => setQuantity(q => Math.max(1, q - 1))}>−</button>
-                                <span>{quantity}</span>
-                                <button onClick={() => setQuantity(q => Math.min(product.stock || 99, q + 1))}>+</button>
+                                <button onClick={() => dispatch(DEC(product))}>−</button>
+                                <span>{cartItem?.quantity || quantity}</span>
+                                <button onClick={() => dispatch(INC(product))}>+</button>
                             </div>
                         </div>
 
                         {/* CTA Buttons */}
                         <div className="spd-actions">
-                            <button className="spd-btn-cart" onClick={handleAddToCart}>
+                            <button className="spd-btn-cart" onClick={() => dispatch(ADD(product))}>
                                 🛒 Add to Cart
                             </button>
                             <button className="spd-btn-buy">
                                 ⚡ Buy Now
                             </button>
                         </div>
-                        {cartMsg && <p className="spd-cart-msg">{cartMsg}</p>}
 
                         {/* Meta Info */}
                         <div className="spd-meta">
@@ -193,7 +167,7 @@ export const SinglePageProduct = () => {
                                             </p>
                                         </div>
                                         <span className="spd-review-rating">
-                                            {"★".repeat(review.rating)}{"☆".repeat(Math.max(0, 5 - review.rating))}
+                                            Rating: {review.rating}
                                         </span>
                                     </div>
                                     <p className="spd-review-body">"{review.comment}"</p>
@@ -208,3 +182,4 @@ export const SinglePageProduct = () => {
         </>
     );
 };
+

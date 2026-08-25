@@ -1,4 +1,4 @@
-import {
+﻿import {
     FaTruckFast,
     FaCreditCard,
     FaRotateLeft,
@@ -7,7 +7,7 @@ import {
 
 import { motion } from "framer-motion";
 
-// import "./WhyChooseUs.css";
+import "./WhyChooseUs.css";
 
 
 const features = [

@@ -1,6 +1,6 @@
-import { FaPaperPlane } from "react-icons/fa";
+﻿import { FaPaperPlane } from "react-icons/fa";
 import { motion } from "framer-motion";
-// import "./Newsletter.css";
+import "./Newsletter.css";
 
 export const Newsletter = () => {
   return (

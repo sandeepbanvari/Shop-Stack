@@ -1,8 +1,12 @@
 import { FaStar, FaHeart, FaCartShopping } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import './ProductCard.css'
+import { useDispatch } from "react-redux";
+import { ADD } from "../Features/Cart Functions/CartSlice";
 
 export const ProductCard = ({ product }) => {
+
+    let dispatch = useDispatch();
 
     return (
         <div className="product-card">
@@ -64,6 +68,7 @@ export const ProductCard = ({ product }) => {
 
             <button
                 className="cart-btn"
+                onClick={()=> dispatch(ADD(product))}
             >
                 <FaCartShopping />
                 Add to Cart

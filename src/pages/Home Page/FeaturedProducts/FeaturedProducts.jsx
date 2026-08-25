@@ -1,10 +1,10 @@
-import axios from "axios";
+﻿import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { FaArrowRight } from "react-icons/fa6";
 import { motion } from "framer-motion";
-import { ProductCard } from "./ProductCard";
-// import "./FeaturedProducts.css";
+import { ProductCard } from "../../../Components/ProductCard";
+import "./FeaturedProducts.css";
 
 
 const gridVariants = {

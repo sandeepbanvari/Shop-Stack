@@ -1,0 +1,318 @@
+/* =========================================================
+   SHOPSTACK — CATEGORIES
+========================================================= */
+
+.categories-section {
+    width: 100%;
+    padding: 90px 0;
+
+    background: #faf9f7;
+}
+
+
+/* =========================================================
+   SECTION TITLE
+========================================================= */
+
+.categories-section .section-title {
+    width: 100%;
+    max-width: 1240px;
+
+    margin: 0 auto 45px;
+
+    padding: 0 30px;
+
+    text-align: center;
+}
+
+
+.categories-section .section-title h2 {
+    margin: 0;
+
+    color: #29251f;
+
+    font-size: 38px;
+    font-weight: 700;
+
+    letter-spacing: -1.5px;
+}
+
+
+.categories-section .section-title p {
+    margin: 10px 0 0;
+
+    color: #81786f;
+
+    font-size: 15px;
+}
+
+
+/* =========================================================
+   GRID
+========================================================= */
+
+.categories-grid {
+    width: 100%;
+    max-width: 1180px;
+
+    margin: auto;
+
+    padding: 0 30px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 14px;
+}
+
+
+/* =========================================================
+   CATEGORY CARD
+========================================================= */
+
+.category-card {
+    position: relative;
+
+    min-height: 150px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    padding: 25px;
+
+    overflow: hidden;
+
+    border: 1px solid #e7dfd7;
+
+    border-radius: 16px;
+
+    background: #ffffff;
+
+    color: #29251f;
+
+    text-decoration: none;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.category-card:hover {
+    transform: translateY(-5px);
+
+    border-color: #d5b9a7;
+
+    box-shadow:
+        0 15px 35px rgba(45, 42, 38, 0.08);
+}
+
+
+/* =========================================================
+   ICON
+========================================================= */
+
+.category-icon {
+    width: 65px;
+    height: 65px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 16px;
+
+    font-size: 24px;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease;
+}
+
+
+.category-card:hover .category-icon {
+    transform: scale(1.08) rotate(-4deg);
+}
+
+
+/* =========================================================
+   CATEGORY NAME
+========================================================= */
+
+.category-card h3 {
+    margin: 0;
+
+    color: #29251f;
+
+    font-size: 17px;
+
+    font-weight: 650;
+
+    letter-spacing: -0.3px;
+}
+
+
+/* =========================================================
+   ARROW
+========================================================= */
+
+.category-card::after {
+    content: "→";
+
+    position: absolute;
+
+    right: 22px;
+    bottom: 18px;
+
+    color: #b0a59c;
+
+    font-size: 18px;
+
+    transition:
+        transform 0.3s ease,
+        color 0.3s ease;
+}
+
+
+.category-card:hover::after {
+    color: #a9552f;
+
+    transform: translateX(5px);
+}
+
+
+/* =========================================================
+   DECORATIVE CIRCLE
+========================================================= */
+
+.category-card::before {
+    content: "";
+
+    position: absolute;
+
+    width: 120px;
+    height: 120px;
+
+    right: -60px;
+    top: -60px;
+
+    border-radius: 50%;
+
+    background: #f8f1eb;
+
+    transition:
+        transform 0.4s ease;
+}
+
+
+.category-card:hover::before {
+    transform: scale(1.5);
+}
+
+
+.category-card > * {
+    position: relative;
+    z-index: 2;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .categories-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .categories-section {
+        padding: 65px 0;
+    }
+
+
+    .categories-section .section-title {
+        padding: 0 20px;
+
+        margin-bottom: 30px;
+    }
+
+
+    .categories-section .section-title h2 {
+        font-size: 30px;
+    }
+
+
+    .categories-section .section-title p {
+        font-size: 14px;
+    }
+
+
+    .categories-grid {
+        grid-template-columns: 1fr;
+
+        padding: 0 20px;
+
+        gap: 12px;
+    }
+
+
+    .category-card {
+        min-height: 100px;
+
+        padding: 18px;
+    }
+
+
+    .category-icon {
+        width: 55px;
+        height: 55px;
+
+        border-radius: 14px;
+
+        font-size: 20px;
+    }
+
+
+    .category-card h3 {
+        font-size: 15px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+    .categories-grid {
+        padding: 0 15px;
+    }
+
+
+    .category-card {
+        min-height: 90px;
+    }
+
+}

@@ -1,3 +1,4 @@
+﻿import "./Categories.css";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import {

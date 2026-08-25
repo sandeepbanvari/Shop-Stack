@@ -63,8 +63,10 @@ export const DealsPage = () => {
     };
 
     return (
-        <div className="deals-page-container">
+<>
             <Header />
+
+        <div className="deals-page-container">
 
             {/* Floating Toast Notification */}
             {toast && (
@@ -102,8 +104,10 @@ export const DealsPage = () => {
             {/* 6. VIP Early Access Newsletter & CTA */}
             <DealsCTA onNewsletterSubmit={handleNewsletterSubmit} />
 
-            <Footer />
         </div>
+            <Footer />
+
+</>
     );
 };
 
