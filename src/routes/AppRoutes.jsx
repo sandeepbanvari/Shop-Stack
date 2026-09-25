@@ -41,6 +41,10 @@ export const AppRoutes = () => {
 
                 <Routes>
                     {
+
+
+
+
                         routeData.map((x) => (
                             <Route
                                 path={x.path}
