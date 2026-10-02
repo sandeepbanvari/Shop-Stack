@@ -9,45 +9,53 @@ const cartSlice = createSlice({
     reducers: {
         ADD: (state, action) => {
             const item = action.payload;
+            const addQty = Number(item.quantity) || 1;
 
             const existingItem = state.find(
                 (pro) => pro.id === item.id
             );
 
             if (existingItem) {
-                existingItem.quantity += 1;
+                existingItem.quantity += addQty;
             } else {
                 state.push({
                     ...item,
-                    quantity: 1,
+                    quantity: addQty,
                 });
             }
 
-            localStorage.setItem("cartData", JSON.stringify(state)
-            );
+            localStorage.setItem("cartData", JSON.stringify(state));
         },
 
         INC: (state, action) => {
-            let item = action.payload
-            let existingItem = state.find(pro => pro.id == item)
-            if (existingItem) existingItem.quantity += 1
-            localStorage.setItem('cartData', JSON.stringify(state))
+            const id = typeof action.payload === "object" && action.payload !== null ? action.payload.id : action.payload;
+            const existingItem = state.find((pro) => pro.id == id);
+            if (existingItem) existingItem.quantity += 1;
+            localStorage.setItem("cartData", JSON.stringify(state));
         },
 
         DEC: (state, action) => {
-            let item = action.payload
-            let existingItem = state.find(pro => pro.id == item)
+            const id = typeof action.payload === "object" && action.payload !== null ? action.payload.id : action.payload;
+            const existingItem = state.find((pro) => pro.id == id);
             if (existingItem && existingItem.quantity > 1) {
-                existingItem.quantity -= 1
+                existingItem.quantity -= 1;
             }
-            localStorage.setItem('cartData', JSON.stringify(state))
+            localStorage.setItem("cartData", JSON.stringify(state));
         },
 
+        REMOVE: (state, action) => {
+            const id = typeof action.payload === "object" && action.payload !== null ? action.payload.id : action.payload;
+            const updated = state.filter((pro) => pro.id != id);
+            localStorage.setItem("cartData", JSON.stringify(updated));
+            return updated;
+        },
 
-
-
+        CLEAR: () => {
+            localStorage.removeItem("cartData");
+            return [];
+        },
     },
 });
 
-export const { ADD, INC, DEC } = cartSlice.actions;
-export default cartSlice.reducer;
+export const { ADD, INC, DEC, REMOVE, CLEAR } = cartSlice.actions;
+export default cartSlice.reducer;

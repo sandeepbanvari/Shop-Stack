@@ -51,14 +51,24 @@
 .cart-page {
   flex: 1;
   width: 100%;
-  max-width: 1120px;
+  max-width: 1180px;
+  min-height: calc(100vh - 220px);
   margin: 0 auto;
-  padding: 52px 24px 90px;
+  padding: 44px 20px 80px;
   display: flex;
   flex-direction: column;
-  align-items: center;
   box-sizing: border-box;
-  animation: pageEntrance 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: pageEntrance 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.cart-page-empty {
+  align-items: center;
+  justify-content: center;
+}
+
+.cart-page-filled {
+  align-items: stretch;
+  justify-content: flex-start;
 }
 
 @keyframes pageEntrance {

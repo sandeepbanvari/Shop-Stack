@@ -4,15 +4,19 @@ import { useParams, useNavigate } from "react-router-dom";
 import { Header } from "../../Components/Header";
 import { Footer } from "../../Components/Footer";
 import "./SinglePageProduct.css";
-import { useDispatch } from "react-redux";
-import { ADD, INC } from "../Cart Functions/CartSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { ADD, INC, DEC } from "../Cart Functions/CartSlice";
 
 export const SinglePageProduct = () => {
     let { id } = useParams();
     let navigate = useNavigate();
     let dispatch = useDispatch();
     let [product, setProduct] = useState(null);
+    let [quantity, setQuantity] = useState(1);
 
+    const cart = useSelector((state) => state.cart || []);
+    const cartItem = cart.find((item) => item.id == id);
+    
     useEffect(() => {
         async function getProducts() {
             try {
@@ -114,18 +118,62 @@ export const SinglePageProduct = () => {
                         <div className="spd-qty-row">
                             <span className="spd-qty-label">Qty:</span>
                             <div className="spd-qty-control">
-                                <button onClick={() => dispatch(DEC(product))}>−</button>
+                                <button
+                                    type="button"
+                                    onClick={() => {
+                                        if (cartItem) {
+                                            dispatch(DEC(product.id));
+                                        } else {
+                                            setQuantity((prev) => Math.max(1, prev - 1));
+                                        }
+                                    }}
+                                    disabled={cartItem ? cartItem.quantity <= 1 : quantity <= 1}
+                                    aria-label="Decrease quantity"
+                                >
+                                    −
+                                </button>
                                 <span>{cartItem?.quantity || quantity}</span>
-                                <button onClick={() => dispatch(INC(product))}>+</button>
+                                <button
+                                    type="button"
+                                    onClick={() => {
+                                        if (cartItem) {
+                                            dispatch(INC(product.id));
+                                        } else {
+                                            setQuantity((prev) => prev + 1);
+                                        }
+                                    }}
+                                    aria-label="Increase quantity"
+                                >
+                                    +
+                                </button>
                             </div>
                         </div>
 
                         {/* CTA Buttons */}
                         <div className="spd-actions">
-                            <button className="spd-btn-cart" onClick={() => dispatch(ADD(product))}>
+                            <button
+                                type="button"
+                                className="spd-btn-cart"
+                                onClick={() => {
+                                    if (cartItem) {
+                                        dispatch(INC(product.id));
+                                    } else {
+                                        dispatch(ADD({ ...product, quantity }));
+                                    }
+                                }}
+                            >
                                 🛒 Add to Cart
                             </button>
-                            <button className="spd-btn-buy">
+                            <button
+                                type="button"
+                                className="spd-btn-buy"
+                                onClick={() => {
+                                    if (!cartItem) {
+                                        dispatch(ADD({ ...product, quantity }));
+                                    }
+                                    navigate("/cart");
+                                }}
+                            >
                                 ⚡ Buy Now
                             </button>
                         </div>
