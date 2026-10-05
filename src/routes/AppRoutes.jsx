@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom"
-// import { About } from "../pages/About"
+import About from "../pages/About Page/About"
 import { Contact } from "../pages/Contact"
 // import { Deals } from "../pages/Deals"
 // import { Home } from "../pages/Home"
@@ -16,7 +16,7 @@ import { DealsPage } from "../pages/Deals Page/DealsPage"
 
 
 let Home  = React.lazy(() => import('../pages/Home Page/Home' ))
-let About = React.lazy(() => import('../pages/About Page/About'))
+
 
 
 export const AppRoutes = () => {
@@ -37,7 +37,7 @@ export const AppRoutes = () => {
     ]
     return (
         <>
-            <Suspense fallback={<center>....loader</center>}>
+            <Suspense fallback={<Loader />}>
 
                 <Routes>
                     {

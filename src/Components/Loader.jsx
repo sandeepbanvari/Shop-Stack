@@ -1,98 +1,110 @@
 import { useEffect, useState } from "react";
 import "./Loader.css";
 
-const Loader = () => {
-  const [time, setTime] = useState(3);
-  const [progress, setProgress] = useState(0);
-  const [loading, setLoading] = useState(true);
+const LOADING_MESSAGES = [
+  "Preparing your shopping experience...",
+  "Curating handpicked deals & collections...",
+  "Setting up your personal storefront...",
+  "Loading fresh trends & catalog...",
+];
+
+export const Loader = ({
+  message,
+  subtext,
+  fullScreen = true,
+}) => {
+  const [messageIndex, setMessageIndex] = useState(0);
+  const [imageError, setImageError] = useState(false);
 
   useEffect(() => {
-    // Countdown and progress
+    if (message) return;
+
     const interval = setInterval(() => {
-      setTime((prev) => {
-        if (prev <= 1) {
-          clearInterval(interval);
-          return 0;
-        }
+      setMessageIndex((prev) => (prev + 1) % LOADING_MESSAGES.length);
+    }, 2200);
 
-        return prev - 1;
-      });
+    return () => clearInterval(interval);
+  }, [message]);
 
-      setProgress((prev) => {
-        if (prev >= 100) {
-          return 100;
-        }
-
-        return Math.min(prev + 33.33, 100);
-      });
-    }, 1000);
-
-    // Hide loader after 3 seconds
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 3000);
-
-    return () => {
-      clearInterval(interval);
-      clearTimeout(timer);
-    };
-  }, []);
-
-  if (!loading) {
-    return null;
-  }
+  const activeMessage = message || LOADING_MESSAGES[messageIndex];
 
   return (
-    <div className="website-loader">
-
-      <div className="loader-content">
-
-        {/* Logo */}
-        <div className="loader-logo-wrapper">
-
-          <div className="loader-ring"></div>
-
-          <img
-            src="/ShopStack-Shopping-Logo.png"
-            alt="ShopStack"
-            className="loader-logo"
-          />
-
-        </div>
-
-
-        {/* Brand Name */}
-        <h1 className="loader-brand">
-          ShopStack
-        </h1>
-
-
-        {/* Progress Bar */}
-        <div className="loader-progress">
-
-          <div
-            className="loader-progress-bar"
-            style={{
-              width: `${progress}%`,
-            }}
-          ></div>
-
-        </div>
-
-
-        {/* Countdown */}
-        <div className="loader-time">
-          {time}
-        </div>
-
-
-        {/* Loading Text */}
-        <p className="loader-text">
-          Preparing your store...
-        </p>
-
+    <div
+      className={`shopstack-lazy-loader ${fullScreen ? "fullscreen" : "inline"}`}
+      role="status"
+      aria-live="polite"
+      aria-label="Loading page"
+    >
+      {/* Ambient background glow orbs */}
+      <div className="lazy-loader-ambient" aria-hidden="true">
+        <span className="ambient-orb ambient-orb-1" />
+        <span className="ambient-orb ambient-orb-2" />
+        <span className="ambient-orb ambient-orb-3" />
       </div>
 
+      {/* Centerpiece Frosted Glass Card */}
+      <div className="lazy-loader-card">
+        {/* Brand Tag Badge */}
+        <div className="lazy-loader-badge">
+          <span className="badge-pulse-dot" />
+          <span className="badge-text">ShopStack Store</span>
+        </div>
+
+        {/* Centerpiece Emblem with Double Orbital Rings */}
+        <div className="lazy-loader-emblem-wrap">
+          {/* Outer Rotating Glowing Ring */}
+          <div className="orbital-ring orbital-outer" />
+
+          {/* Orbiting Satellite Dot */}
+          <div className="orbital-satellite-track">
+            <span className="orbital-satellite-dot" />
+          </div>
+
+          {/* Inner Counter-Rotating Ring */}
+          <div className="orbital-ring orbital-inner" />
+
+          {/* Central Logo Badge */}
+          <div className="lazy-loader-logo-disk">
+            {!imageError ? (
+              <img
+                src="/ShopStack-Shopping-Logo.png"
+                alt="ShopStack"
+                className="lazy-loader-logo-img"
+                onError={() => setImageError(true)}
+              />
+            ) : (
+              <div className="lazy-loader-fallback-logo">
+                <i className="fa-solid fa-bag-shopping" />
+              </div>
+            )}
+          </div>
+        </div>
+
+        {/* Brand Title */}
+        <h2 className="lazy-loader-brand">
+          Shop<span className="brand-accent">Stack</span>
+        </h2>
+
+        {/* Indeterminate Shimmer Progress Bar */}
+        <div className="lazy-loader-progress-track">
+          <div className="lazy-loader-progress-bar" />
+        </div>
+
+        {/* Dynamic Rotating Status Message */}
+        <div className="lazy-loader-status">
+          <span key={activeMessage} className="status-text">
+            {activeMessage}
+          </span>
+          <span className="status-dots" aria-hidden="true">
+            <span className="dot dot-1" />
+            <span className="dot dot-2" />
+            <span className="dot dot-3" />
+          </span>
+        </div>
+
+        {/* Optional Secondary Subtext */}
+        {subtext && <p className="lazy-loader-subtext">{subtext}</p>}
+      </div>
     </div>
   );
 };

@@ -411,8 +411,39 @@
 }
 
 .checkout-btn:disabled {
-  opacity: 0.75;
+  opacity: 0.85;
   cursor: wait;
+}
+
+.checkout-btn-content {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.checkout-btn-icon {
+  font-size: 17px;
+}
+
+.btn-loading-state {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+}
+
+.checkout-spinner {
+  width: 17px;
+  height: 17px;
+  border: 2.5px solid rgba(255, 255, 255, 0.35);
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: checkoutSpin 0.7s linear infinite;
+  display: inline-block;
+}
+
+@keyframes checkoutSpin {
+  to { transform: rotate(360deg); }
 }
 
 /* Trust Badge */

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import {
   FaTrashCan,
@@ -7,15 +7,18 @@ import {
   FaPlus,
   FaArrowLeft,
   FaShieldHalved,
-  FaCircleCheck,
+  FaReceipt,
 } from "react-icons/fa6";
 import { INC, DEC, REMOVE, CLEAR } from "../../../Features/Cart Functions/CartSlice";
+import { BillReceiptModal } from "./BillReceiptModal";
 import "./CartItems.css";
 
 export const CartItems = ({ cart }) => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [isCheckingOut, setIsCheckingOut] = useState(false);
-  const [orderPlaced, setOrderPlaced] = useState(false);
+  const [showBillModal, setShowBillModal] = useState(false);
+  const [receiptData, setReceiptData] = useState(null);
 
   // Calculate items count and prices
   const totalItems = cart.reduce((acc, item) => acc + (item.quantity || 1), 0);
@@ -28,11 +31,51 @@ export const CartItems = ({ cart }) => {
 
   const handleCheckout = () => {
     setIsCheckingOut(true);
+
+    const snapshot = {
+      orderId: `SS-${Math.floor(100000 + Math.random() * 900000)}`,
+      transactionId: `TXN_${Math.random().toString(36).substring(2, 9).toUpperCase()}`,
+      date: new Date().toLocaleDateString("en-US", {
+        weekday: "short",
+        year: "numeric",
+        month: "short",
+        day: "numeric",
+      }),
+      time: new Date().toLocaleTimeString("en-US", {
+        hour: "2-digit",
+        minute: "2-digit",
+      }),
+      items: cart.map((item) => ({
+        id: item.id,
+        title: item.title,
+        price: Number(item.price),
+        quantity: item.quantity || 1,
+        thumbnail: item.thumbnail || item.images?.[0] || "/placeholder.png",
+        category: item.category,
+      })),
+      subtotal,
+      shipping,
+      total,
+      paymentMethod: "Credit Card (•••• 4242)",
+    };
+
+    // Smooth processing feedback before bill paper rises from bottom
     setTimeout(() => {
       setIsCheckingOut(false);
-      setOrderPlaced(true);
-      dispatch(CLEAR());
-    }, 1200);
+      setReceiptData(snapshot);
+      setShowBillModal(true);
+    }, 650);
+  };
+
+  const handleCloseBill = () => {
+    setShowBillModal(false);
+    dispatch(CLEAR());
+  };
+
+  const handleContinueShopping = () => {
+    setShowBillModal(false);
+    dispatch(CLEAR());
+    navigate("/products");
   };
 
   return (
@@ -191,11 +234,17 @@ export const CartItems = ({ cart }) => {
               className="checkout-btn"
               onClick={handleCheckout}
               disabled={isCheckingOut}
+              id="cart-checkout-button"
             >
               {isCheckingOut ? (
-                <span className="btn-loading-state">Processing...</span>
+                <span className="btn-loading-state">
+                  <span className="checkout-spinner" /> Generating Bill...
+                </span>
               ) : (
-                <span>Checkout</span>
+                <span className="checkout-btn-content">
+                  <FaReceipt className="checkout-btn-icon" />
+                  <span>Checkout</span>
+                </span>
               )}
             </button>
 
@@ -209,36 +258,14 @@ export const CartItems = ({ cart }) => {
       </div>
 
       {/* =========================================================
-          3. CHECKOUT SUCCESS MODAL
+          3. REALISTIC BILL RECEIPT MODAL (Comes from bottom to top)
       ========================================================= */}
-      {orderPlaced && (
-        <div
-          className="order-modal-overlay"
-          role="dialog"
-          aria-modal="true"
-          aria-labelledby="modal-title"
-        >
-          <div className="order-modal-card">
-            <div className="order-modal-icon-bubble">
-              <FaCircleCheck />
-            </div>
-            <h3 id="modal-title" className="order-modal-title">
-              Order Placed Successfully!
-            </h3>
-            <p className="order-modal-desc">
-              Thank you for shopping with ShopStack. We have received your order
-              and will start processing it right away.
-            </p>
-            <Link
-              to="/products"
-              className="order-modal-btn"
-              onClick={() => setOrderPlaced(false)}
-            >
-              Continue Shopping
-            </Link>
-          </div>
-        </div>
-      )}
+      <BillReceiptModal
+        isOpen={showBillModal}
+        receiptData={receiptData}
+        onClose={handleCloseBill}
+        onContinueShopping={handleContinueShopping}
+      />
     </div>
   );
 };
